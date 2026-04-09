@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GrimorIa — Ilaria Gonzales | Matematica Cosmica + Cybernetica Esecutiva</title>
+  <meta name="description" content="GrimorIa è lo studio di trasformazione strategica di Ilaria Gonzales. Al crocevia tra Matematica Cosmica e Cybernetica Esecutiva. Consulenza bespoke per leader e visionarie."/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="GrimorIa — Ilaria Gonzales"/>
+  <meta property="og:description" content="Oracolo strategico. Matematica Cosmica + Cybernetica Esecutiva. Consulenza bespoke."/>
+  <meta property="og:type" content="website"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="shortcut icon" href="/favicon.svg"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'obsidian':   '#0E0E10',
+            'pearl':      '#EDEAE4',
+            'pearl-deep': '#E0DDD7',
+            'gold':       '#B8924A',
+            'emerald-g':  '#009E74',
+            'charcoal':   '#3A3530',
+            'stone':      '#7A7670',
+          },
+          fontFamily: {
+            'serif':  ['"Playfair Display"', 'Georgia', 'serif'],
+            'sans':   ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 300;
+      line-height: 1.85;
+      background-color: #0E0E10;
+      color: #EDEAE4;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      letter-spacing: -0.02em;
+    }
+    ::selection { background: #B8924A22; color: #B8924A; }
+
+    /* ── Reduced Motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ── Nav ── */
+    #main-nav {
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      transition: background 0.3s ease;
+    }
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #7A7670;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover { color: #B8924A; }
+
+    /* ── Eyebrow labels ── */
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+    .eyebrow-emerald { color: #009E74; }
+    .eyebrow-gold    { color: #B8924A; }
+    .eyebrow-stone   { color: #7A7670; }
+
+    /* ── Sections ── */
+    .section-dark    { background-color: #0E0E10; color: #EDEAE4; }
+    .section-pearl   { background-color: #EDEAE4; color: #0E0E10; }
+    .section-deep    { background-color: #E0DDD7; color: #0E0E10; }
+
+    /* ── Buttons ── */
+    .btn-gold {
+      display: inline-block;
+      background-color: #B8924A;
+      color: #0E0E10;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.25rem 3.5rem;
+      border-radius: 0;
+      transition: background 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-gold:hover { background-color: #009E74; color: #EDEAE4; }
+
+    .btn-outline-pearl {
+      display: inline-block;
+      background: transparent;
+      color: #EDEAE4;
+      border: 1px solid rgba(237,234,228,0.3);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2.5rem;
+      border-radius: 0;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-outline-pearl:hover { border-color: #B8924A; color: #B8924A; }
+
+    /* ── Link arrow ── */
+    .link-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #B8924A;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: gap 0.3s ease;
+    }
+    .link-gold:hover { gap: 0.8rem; }
+
+    /* ── Competitive Map ── */
+    .map-container {
+      position: relative;
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 0.85;
+    }
+    .map-axis-h, .map-axis-v {
+      position: absolute;
+      background-color: rgba(58,53,48,0.25);
+    }
+    .map-axis-h { width: 100%; height: 1px; top: 50%; left: 0; }
+    .map-axis-v { height: 100%; width: 1px; left: 50%; top: 0; }
+    .map-label-axis {
+      position: absolute;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #7A7670;
+    }
+    .map-node {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      color: #7A7670;
+      text-align: center;
+      cursor: default;
+    }
+    .map-node-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #7A7670;
+      margin: 0 auto 4px;
+    }
+    .map-node-grimoria { color: #B8924A; }
+    .map-node-grimoria .map-node-dot {
+      width: 16px; height: 16px;
+      background: #B8924A;
+      box-shadow: 0 0 0 6px rgba(184,146,74,0.15);
+    }
+    .map-node-grimoria span {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+    }
+
+    /* ── Testimonial ── */
+    .testimonial-block {
+      border-left: 2px solid rgba(184,146,74,0.35);
+      padding-left: 2rem;
+    }
+
+    /* ── Card offerta ── */
+    .card-offerta {
+      border: 1px solid rgba(58,53,48,0.15);
+      padding: 2.5rem;
+      transition: border-color 0.3s ease, background 0.3s ease;
+      position: relative;
+    }
+    .card-offerta:hover { border-color: rgba(184,146,74,0.4); background-color: #f5f2ec; }
+    .card-offerta.gold-accent:hover { background-color: #d8d5cf; }
+    .card-offerta.gold-accent { border-left: 2px solid #B8924A; background-color: #E0DDD7; }
+
+    /* ── Stats ── */
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #EDEAE4;
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #7A7670;
+      margin-top: 0.35rem;
+    }
+
+    /* ── Portrait ── */
+    .portrait-wrap { position: relative; overflow: hidden; }
+    .portrait-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.1);
+      transition: filter 0.6s ease;
+      display: block;
+    }
+    .portrait-wrap:hover img { filter: grayscale(10%) contrast(1.05); }
+
+    /* ── Glyph watermark ── */
+    .glyph-wm {
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(120px, 30vw, 400px);
+      line-height: 1;
+      opacity: 0.04;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    /* ── Scroll-reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAV — Glassmorphism floating
+═══════════════════════════════════════════ -->
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-obsidian/75 border-b border-white/5" role="navigation" aria-label="Navigazione principale">
+  <div class="max-w-7xl mx-auto px-8 md:px-12 py-5 flex justify-between items-center">
+    <a href="#hero" class="font-serif font-bold text-xl tracking-widest text-gold" aria-label="GrimorIa — Home">
+      GrimorIa
+    </a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="#manifesto"    class="nav-link">Il Metodo</a>
+      <a href="#offerta"      class="nav-link">I Formati</a>
+      <a href="#chi-sono"     class="nav-link">Chi Sono</a>
+      <a href="https://tally.so/r/GxL852" target="_blank" rel="noopener noreferrer" class="nav-link text-gold border border-gold/30 px-4 py-2 hover:bg-gold/10">Candidati</a>
+    </div>
+    <!-- Mobile hamburger -->
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" aria-expanded="false">
+      <span class="w-6 h-px bg-stone block transition-all duration-300" id="hb1"></span>
+      <span class="w-4 h-px bg-stone block transition-all duration-300" id="hb2"></span>
+      <span class="w-5 h-px bg-stone block transition-all duration-300" id="hb3"></span>
+    </button>
+  </div>
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-white/5 bg-obsidian/95">
+    <div class="flex flex-col px-8 py-4 gap-4">
+      <a href="#manifesto"   class="nav-link py-2" onclick="closeMobileMenu()">Il Metodo</a>
+      <a href="#offerta"     class="nav-link py-2" onclick="closeMobileMenu()">I Formati</a>
+      <a href="#chi-sono"    class="nav-link py-2" onclick="closeMobileMenu()">Chi Sono</a>
+      <a href="https://tally.so/r/GxL852" target="_blank" rel="noopener noreferrer" class="nav-link py-2 text-gold" onclick="closeMobileMenu()">Candidati</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     § 1 · HERO — Split-screen cinematografico
+═══════════════════════════════════════════ -->
+<section id="hero" class="section-dark min-h-screen flex items-stretch relative overflow-hidden pt-20">
+  <div class="glyph-wm text-white" style="right:-5%; top:-10%;">☽</div>
+
+  <!-- Split layout -->
+  <div class="w-full flex flex-col lg:flex-row">
+
+    <!-- LEFT — Obsidian side (contenuto) -->
+    <div class="flex-1 flex flex-col justify-center px-10 md:px-16 lg:px-20 py-24 lg:py-0 relative z-10">
+      <div class="reveal max-w-xl">
+        <span class="eyebrow eyebrow-emerald">✦ Architettura dell'Essenza</span>
+        <h1 class="font-serif font-bold text-pearl leading-[1.02] tracking-[-0.03em] mb-6"
+            style="font-size:clamp(3rem,6vw,5.5rem);">
+          Strategy <br/>
+          <em class="text-gold not-italic">meets</em> Soul.
+        </h1>
+        <p class="font-sans font-light text-stone text-lg leading-relaxed mb-4 max-w-md" style="line-height:1.85;">
+          <em class="font-serif text-pearl/70 text-xl">"Ti restituisco alla tua natura — e da lì, tutto si riordina."</em>
+        </p>
+        <p class="font-sans font-light text-stone mb-10 max-w-md" style="font-size:1.05rem; line-height:1.85;">
+          Al crocevia tra Matematica Cosmica e Cybernetica Esecutiva. 
+          Un posizionamento senza concorrenza diretta — per le leader che cercano chiarezza, non motivazione.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://tally.so/r/GxL852" target="_blank" rel="noopener noreferrer" class="btn-gold" id="cta-hero-primary">Candidati al Perimetro</a>
+          <a href="#manifesto"   class="btn-outline-pearl" id="cta-hero-secondary">Scopri il Metodo</a>
+        </div>
+        <p class="mt-6 font-sans text-stone/50 text-xs uppercase tracking-widest">
+          Selezione discrezionale · Candidature aperte
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT — Cinematic Visual Side -->
+    <div class="hidden lg:block relative w-[42%] overflow-hidden">
+      <img src="/assets/hero-essenza.jpg" 
+           alt="Essenza — Architettura dell'Essenza" 
+           class="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05] hover:grayscale-0 transition-all duration-1000"/>
+      <div class="absolute inset-0 bg-obsidian/20"></div>
+      <!-- Label verticale -->
+      <div class="absolute bottom-12 right-8 flex flex-col items-end gap-2">
+        <span class="eyebrow eyebrow-pearl" style="writing-mode:vertical-lr; letter-spacing:0.4em; color:rgba(237,234,228,0.6);">Soglia Strategica</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     § 2 · MANIFESTO — Core Mechanism
+═══════════════════════════════════════════ -->
+<section id="manifesto" class="section-dark py-32 relative overflow-hidden">
+  <div class="glyph-wm text-white" style="left:-8%; top:10%;">☿</div>
+
+  <div class="max-w-7xl mx-auto px-8 md:px-12">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+      <!-- LEFT — pull-quote -->
+      <div class="reveal">
+        <span class="eyebrow eyebrow-gold">☽ L'Architettura dell'Essenza</span>
+        <blockquote class="font-serif italic text-gold leading-tight mb-8"
+                    style="font-size:clamp(2rem,3.5vw,3.2rem); line-height:1.15;">
+          "Non si vende una consulenza.<br/>Si rivela il Sistema<br/>Operativo Originario."
+        </blockquote>
+        <div class="border-t border-gold/20 pt-6">
+          <span class="eyebrow eyebrow-emerald">Funzione Esecutiva Esterna™</span>
+        </div>
+      </div>
+
+      <!-- RIGHT — body copy + stats -->
+      <div class="reveal" style="transition-delay:0.15s;">
+        <span class="eyebrow eyebrow-stone">Chi è Ilaria</span>
+        <h2 class="font-serif font-bold text-pearl mb-6 leading-tight"
+            style="font-size:2.2rem; letter-spacing:-0.02em;">
+          Matematica Cosmica<br/>+ Cybernetica Esecutiva
+        </h2>
+        <p class="font-sans font-light text-stone mb-5" style="font-size:1.05rem; line-height:1.85;">
+          Nessun business coach tradizionale sa leggere le Gene Keys. 
+          Nessun astrologo sa orchestrare sistemi AI su Pinecone. 
+          Ilaria fa entrambe le cose.
+        </p>
+        <p class="font-sans font-light text-stone mb-10" style="font-size:1.05rem; line-height:1.85;">
+          Questo incrocio crea un Oceano Blu dove non esiste competizione diretta. 
+          Non una consulente — un oracolo strategico.
+        </p>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-3 gap-6 mb-10 border-t border-white/8 pt-8">
+          <div>
+            <div class="stat-number">15+</div>
+            <div class="stat-label">anni di ricerca</div>
+          </div>
+          <div>
+            <div class="stat-number">4</div>
+            <div class="stat-label">sistemi integrati<br/>(HD, Jyotish, GK, AI)</div>
+          </div>
+          <div>
+            <div class="stat-number">Top 5%</div>
+            <div class="stat-label">del mercato<br/>per prezzo</div>
+          </div>
+        </div>
+
+        <a href="#oceano-blu" class="link-gold" id="link-metodologia">
+          Scopri la metodologia <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     § 3 · OCEANO BLU — Mappa competitiva
+═══════════════════════════════════════════ -->
+<section id="oceano-blu" class="section-deep py-32 relative overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-8 md:px-12">
+
+    <!-- Header -->
+    <div class="reveal mb-16 max-w-2xl">
+      <span class="eyebrow eyebrow-emerald">✦ Il Differenziatore</span>
+      <h2 class="font-serif font-bold text-obsidian leading-tight mb-5"
+          style="font-size:clamp(2.5rem,5vw,4rem); letter-spacing:-0.03em;">
+        Dove non esiste<br/>concorrenza.
+      </h2>
+      <p class="font-sans font-light text-stone" style="font-size:1.1rem; line-height:1.85; max-width:580px;">
+        Il posizionamento di GrimorIa non è uno stile — è una categoria. 
+        Un Oceano Blu creato dall'intersezione improbabile di due mondi che non si parlano.
+      </p>
+    </div>
+
+    <!-- Competitive Map -->
+    <div class="reveal flex justify-center mb-16" style="transition-delay:0.1s;">
+      <div class="map-container">
+        <!-- Assi -->
+        <div class="map-axis-h"></div>
+        <div class="map-axis-v"></div>
+
+        <!-- Label assi -->
+        <div class="map-label-axis" style="left:2px; top:50%; transform:translateY(-50%) translateY(-16px);">↑ Profondità</div>
+        <div class="map-label-axis" style="left:2px; bottom:4%; ">Superficie ↓</div>
+        <div class="map-label-axis" style="top:4%;  left:2px;">Intuitivo / Esoterico →</div>
+        <div class="map-label-axis" style="top:4%;  right:2px; text-align:right;">← Analitico / Sistemico</div>
+
+        <!-- GrimorIa — top right -->
+        <div class="map-node map-node-grimoria" style="left:75%; top:18%;">
+          <div class="map-node-dot"></div>
+          <span>GrimorIa</span>
+        </div>
+
+        <!-- Competitors -->
+        <div class="map-node" style="left:62%; top:50%;">
+          <div class="map-node-dot"></div>
+          Business Coach
+        </div>
+        <div class="map-node" style="left:28%; top:20%;">
+          <div class="map-node-dot"></div>
+          Astrologi<br/>Tradizionali
+        </div>
+        <div class="map-node" style="left:22%; top:50%;">
+          <div class="map-node-dot"></div>
+          Spiritual<br/>Coach
+        </div>
+        <div class="map-node" style="left:50%; top:80%;">
+          <div class="map-node-dot"></div>
+          Motivatori
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom copy -->
+    <div class="reveal grid lg:grid-cols-2 gap-12 border-t border-charcoal/15 pt-12" style="transition-delay:0.2s;">
+      <p class="font-serif italic text-gold" style="font-size:1.25rem; line-height:1.5;">
+        "Nessun business coach tradizionale sa leggere le Gene Keys. 
+        Nessun astrologo sa orchestrare sistemi AI. 
+        Ilaria fa entrambe le cose — e questo crea un mercato di uno."
+      </p>
+      <p class="font-sans font-light text-charcoal" style="font-size:1rem; line-height:1.85;">
+        La sovrapposizione tra <strong>Matematica Cosmica</strong> (Gene Keys, Jyotish, Astrologia Evolutiva) 
+        e <strong>Cybernetica Esecutiva</strong> (sistemi AI, automazione, architettura cognitiva) 
+        genera un Oceano Blu dove la competizione diretta è strutturalmente impossibile.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     § 4 · OFFERTA — I Formati
+═══════════════════════════════════════════ -->
+<section id="offerta" class="section-pearl py-32 relative overflow-hidden">
+  <div class="glyph-wm text-black" style="right:-5%; bottom:-10%; opacity:0.03;">☉</div>
+
+  <div class="max-w-7xl mx-auto px-8 md:px-12">
+
+    <!-- Header -->
+    <div class="reveal mb-16">
+      <span class="eyebrow eyebrow-emerald">✦ I Formati</span>
+      <h2 class="font-serif font-bold text-obsidian leading-tight mb-5"
+          style="font-size:clamp(2.5rem,4.5vw,3.75rem); letter-spacing:-0.03em;">
+        Scegli il tuo<br/>perimetro di accesso.
+      </h2>
+      <p class="font-sans font-light text-stone" style="font-size:1.1rem; line-height:1.85; max-width:540px;">
+        GrimorIa non ha un'offerta — ha un ecosistema. 
+        Ogni formato è una soglia, non un prodotto.
+      </p>
+    </div>
+
+    <!-- Cards — staggered layout -->
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+      <!-- Card 1 -->
+      <div class="card-offerta reveal bg-pearl">
+        <span class="eyebrow eyebrow-emerald">Formato Sovrano</span>
+        <h3 class="font-serif font-bold text-obsidian text-2xl mb-3">Sessioni 1:1 Sovrane</h3>
+        <p class="font-sans font-light text-charcoal mb-6" style="font-size:0.95rem; line-height:1.85;">
+          Diagnosi profonda e architettura strategica personalizzata. 
+          Per chi è pronta a trasformare la propria natura — non adattarla.
+        </p>
+        <p class="font-sans font-medium text-stone" style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;">
+          Su candidatura · Disponibilità Selettiva
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card-offerta reveal bg-pearl" style="transition-delay:0.1s; margin-top:2rem;">
+        <span class="eyebrow eyebrow-emerald">Formato Collettivo</span>
+        <h3 class="font-serif font-bold text-obsidian text-2xl mb-3">Gruppi Intimi</h3>
+        <p class="font-sans font-light text-charcoal mb-6" style="font-size:0.95rem; line-height:1.85;">
+          Immersione collettiva per 4-12 menti selezionate. 
+          Il campo del gruppo amplifica la trasformazione individuale.
+        </p>
+        <p class="font-sans font-medium text-stone" style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;">
+          4-12 partecipanti · Cicli stagionali
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card-offerta reveal bg-pearl" style="transition-delay:0.15s;">
+        <span class="eyebrow eyebrow-emerald">Accesso Gratuito</span>
+        <h3 class="font-serif font-bold text-obsidian text-2xl mb-3">Laboratorio Aperto</h3>
+        <p class="font-sans font-light text-charcoal mb-6" style="font-size:0.95rem; line-height:1.85;">
+          Spazio Sacro: costruzione dal vivo del business secondo architettura energetica, 
+          astrologia evolutiva e business systematization.
+        </p>
+        <p class="font-sans font-medium text-stone mb-6" style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;">
+          Substack · Settimanale
+        </p>
+        <a href="https://spaziosacro.substack.com" target="_blank" rel="noopener noreferrer" 
+           class="btn-outline-pearl text-[0.65rem] py-2 px-6 border-stone/30 text-stone hover:border-gold hover:text-gold transition-colors">
+          Accedi a Spazio Sacro
+        </a>
+      </div>
+
+      <!-- Card 4 — Gold accent -->
+      <div class="card-offerta gold-accent reveal" style="transition-delay:0.2s; margin-top:2rem;">
+        <span class="eyebrow eyebrow-gold">Formato Immersivo</span>
+        <h3 class="font-serif font-bold text-2xl mb-3" style="color:#B8924A;">VIP Day — Strategic Shot</h3>
+        <p class="font-sans font-light text-charcoal mb-6" style="font-size:0.95rem; line-height:1.85;">
+          8 ore. La tua mente. La mia esecuzione. Decodifica della Firma Energetica e 
+          intervento chirurgico su una sola decisione critica che sta bloccando il tuo business.
+        </p>
+        <p class="font-sans font-medium text-stone" style="font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase;">
+          Online o in presenza · 2 posti al mese
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="reveal text-center mt-14" style="transition-delay:0.25s;">
+      <a href="https://tally.so/r/GxL852" target="_blank" rel="noopener noreferrer" class="link-gold" style="font-size:0.85rem;" id="link-offerta-cta">
+        Candidati al Perimetro <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     § 5 · CHI SONO — Identità di Ilaria
+═══════════════════════════════════════════ -->
+<section id="chi-sono" class="section-deep py-32 relative overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-8 md:px-12">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+
+      <!-- Portrait -->
+      <div class="reveal portrait-wrap" style="max-height:600px; min-height:400px;">
+        <img src="/assets/ilaria-gonzales-portrait.jpg"
+             alt="Ilaria Gonzales — Fondatrice di GrimorIa"
+             class="w-full h-full object-cover"
+             loading="lazy"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+        <!-- Fallback placeholder -->
+        <div style="display:none; width:100%; height:400px; background:#3A3530; align-items:center; justify-content:center;">
+          <span class="font-serif text-gold/40 text-9xl">♀</span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="reveal" style="transition-delay:0.15s;">
+        <span class="eyebrow eyebrow-stone">Chi governa le tue architetture</span>
+        <h2 class="font-serif font-bold text-obsidian leading-tight mb-6"
+            style="font-size:clamp(2rem,3.5vw,2.8rem); letter-spacing:-0.02em;">
+          Sono Ilaria Gonzales.<br/>
+          <em class="text-gold not-italic">Oracolo strategico.</em>
+        </h2>
+        <p class="font-sans font-light text-charcoal mb-5" style="font-size:1.05rem; line-height:1.85;">
+          Vengo da anni di trincea nel mondo delle agenzie tradizionali — un ambiente che ha premiato 
+          il mio cervello costringendolo però in un sistema orientato al collasso. 
+          Fino a quando ho capito una cruda verità: 
+          <strong>l'intuizione senza infrastruttura è solo lavoro non retribuito.</strong>
+        </p>
+        <p class="font-sans font-light text-charcoal mb-5" style="font-size:1.05rem; line-height:1.85;">
+          Oggi lavoro fondendo l'arte della Business Astrology (per prevedere le asimmetrie del mercato) 
+          e la potenza dell'Intelligenza Artificiale. Non faccio oroscopi consolatori — 
+          progetto <em>soluzioni</em>.
+        </p>
+        <p class="font-sans font-light text-charcoal mb-10" style="font-size:1.05rem; line-height:1.85;">
+          La mia missione: prendere le menti più caoticamente geniali 
+          e restituire loro il potere del controllo totale, 
+          tramutando gli sforzi invisibili nel monopolio del proprio mercato d'eccellenza.
+        </p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <span class="eyebrow eyebrow-emerald text-xs" style="margin-bottom:0;">Pace Operativa™</span>
+          <span class="font-sans text-stone/40" style="font-size:0.7rem;">·</span>
+          <a href="https://spaziosacro.substack.com/" target="_blank" rel="noreferrer" 
+             class="link-gold text-xs" id="link-substack">
+            Spazio Sacro <span aria-hidden="true">→</span>
+          </a>
+          <a href="https://www.youtube.com/channel/UCWPy-zZ7hamRLoymkVtdLlQ" target="_blank" rel="noreferrer"
+             class="link-gold text-xs" id="link-youtube">
+            YouTube <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     § 6 · TESTIMONIALS — Social proof selettiva
+═══════════════════════════════════════════ -->
+<section id="testimonials" class="section-dark py-32 relative overflow-hidden">
+  <div class="glyph-wm text-white" style="right:-5%; top:5%; opacity:0.03;">♄</div>
+
+  <div class="max-w-7xl mx-auto px-8 md:px-12">
+
+    <!-- Header -->
+    <div class="reveal mb-20 max-w-xl">
+      <span class="eyebrow eyebrow-gold">☽ Chi ha attraversato il perimetro</span>
+      <h2 class="font-serif italic font-normal text-pearl leading-tight mb-4"
+          style="font-size:clamp(2rem,4vw,3rem); line-height:1.15;">
+        "Le testimonianze non si raccolgono.<br/>Si guadagnano."
+      </h2>
+      <p class="font-sans font-light text-stone" style="font-size:0.95rem;">
+        Selezionati con discrezione. Condivisi con permesso.
+      </p>
+    </div>
+
+    <!-- Testimonials — layout asimmetrico -->
+    <div class="flex flex-col gap-16">
+
+      <!-- 1 — sinistra -->
+      <div class="reveal testimonial-block max-w-2xl" style="transition-delay:0.05s;">
+        <span class="text-gold text-2xl font-serif" aria-hidden="true">☽</span>
+        <blockquote class="font-serif italic text-pearl mt-3 mb-4" style="font-size:1.35rem; line-height:1.6;">
+          "Ilaria ha estratto i dati essenziali dal caos e mi ha catapultata verso una traiettoria 
+          che non avrei mai individuato da sola. Ha progettato un sistema — non ha venduto un sogno."
+        </blockquote>
+        <p class="font-sans font-medium text-stone" style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase;">
+          — Valentina M., CEO &amp; Founder
+        </p>
+      </div>
+
+      <!-- 2 — destra offset -->
+      <div class="reveal testimonial-block max-w-2xl ml-auto" style="transition-delay:0.12s;">
+        <span class="text-gold text-2xl font-serif" aria-hidden="true">☽</span>
+        <blockquote class="font-serif italic text-pearl mt-3 mb-4" style="font-size:1.35rem; line-height:1.6;">
+          "In qualche modo riesce a vedere la tua salsa speciale con una chiarezza cristallina. 
+          Il suo framework mi ha fatto capire che non dovevo lavorare così duramente per distinguermi — 
+          dovevo smettere di farlo nel modo sbagliato."
+        </blockquote>
+        <p class="font-sans font-medium text-stone" style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase;">
+          — Laura B., Consulente Strategica
+        </p>
+      </div>
+
+      <!-- 3 — centro -->
+      <div class="reveal testimonial-block max-w-xl mx-auto" style="transition-delay:0.2s;">
+        <span class="text-gold text-2xl font-serif" aria-hidden="true">☽</span>
+        <blockquote class="font-serif italic text-pearl mt-3 mb-4" style="font-size:1.35rem; line-height:1.6;">
+          "Non è una consulente. È un'architetta della mente. 
+          Sei mesi dopo la nostra collaborazione, ho triplicato il valore percepito del mio posizionamento 
+          senza aggiungere un solo servizio."
+        </blockquote>
+        <p class="font-sans font-medium text-stone" style="font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase;">
+          — Sofia R., Executive Coach
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     § 7 · PERIMETRO — CTA finale cinematografica
+═══════════════════════════════════════════ -->
+<section id="candidatura" class="section-dark relative overflow-hidden" style="padding: 10rem 0;">
+  <!-- Gold radial glow -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true"
+       style="background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(184,146,74,0.08) 0%, transparent 70%);">
+  </div>
+  <div class="glyph-wm text-white" style="left:50%; top:50%; transform:translate(-50%,-50%); opacity:0.03;">♄</div>
+
+  <div class="max-w-3xl mx-auto px-8 md:px-12 text-center relative z-10">
+    <div class="reveal">
+      <span class="eyebrow eyebrow-emerald">✦ Architettura dell'Essenza</span>
+      <h2 class="font-serif font-bold text-gold leading-none mb-5"
+          style="font-size:clamp(3.5rem,8vw,6.5rem); letter-spacing:-0.03em; line-height:1.0;">
+        Candidati<br/>al Perimetro.
+      </h2>
+      <p class="font-serif italic font-normal text-pearl mb-8" style="font-size:1.35rem; line-height:1.4;">
+        "Se stai leggendo questo, probabilmente sai già."
+      </p>
+      <p class="font-sans font-light text-stone mb-12 mx-auto" style="font-size:1rem; line-height:1.85; max-width:440px;">
+        Il perimetro di GrimorIa è riservato a chi cerca l'eccellenza assoluta. 
+        La selezione è discrezionale e basata sull'allineamento dei valori. 
+        Non esiste urgenza artificiale — o sei il profilo giusto, o non lo sei.
+      </p>
+      <a href="https://tally.so/r/GxL852" target="_blank" rel="noopener noreferrer" class="btn-gold" id="cta-perimetro">Candidati al Tier</a>
+      <p class="mt-6 font-sans text-stone/50" style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase;">
+        Selezione discrezionale · Nessuna urgenza · Candidature aperte
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     § 8 · FOOTER
+═══════════════════════════════════════════ -->
+<footer class="section-deep py-16">
+  <div class="max-w-7xl mx-auto px-8 md:px-12">
+    <div class="grid md:grid-cols-2 gap-12 items-start pb-12 border-b border-charcoal/15">
+
+      <!-- LEFT -->
+      <div>
+        <div class="font-serif font-bold text-obsidian text-2xl tracking-tight mb-1">GrimorIa</div>
+        <p class="font-sans font-light text-stone text-sm mb-6" style="line-height:1.6;">
+          Matematica Cosmica + Cybernetica Esecutiva
+        </p>
+        <!-- Social -->
+        <div class="flex gap-4 items-center">
+          <a href="https://spaziosacro.substack.com/" target="_blank" rel="noreferrer"
+             aria-label="Substack — Spazio Sacro"
+             class="text-stone hover:text-gold transition-colors duration-300" id="social-substack">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM22.539 12.32H1.46v9.336l10.537-5.872 10.542 5.872V12.32zM22.54 1.341H1.46v2.836h21.08V1.341z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCWPy-zZ7hamRLoymkVtdLlQ" target="_blank" rel="noreferrer"
+             aria-label="YouTube — Ilaria Gonzales"
+             class="text-stone hover:text-gold transition-colors duration-300" id="social-youtube">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT — link grid -->
+      <div class="grid grid-cols-2 gap-x-8 gap-y-3">
+        <a href="#manifesto"   class="nav-link text-charcoal hover:text-gold" id="footer-link-manifesto">Il Manifesto</a>
+        <a href="#offerta"     class="nav-link text-charcoal hover:text-gold" id="footer-link-offerta">I Formati</a>
+        <a href="#chi-sono"    class="nav-link text-charcoal hover:text-gold" id="footer-link-chisono">Chi Sono</a>
+        <a href="#testimonials" class="nav-link text-charcoal hover:text-gold" id="footer-link-testimonials">Testimonials</a>
+        <a href="https://spaziosacro.substack.com/" target="_blank" rel="noreferrer"
+           class="nav-link text-charcoal hover:text-gold" id="footer-link-substack">Spazio Sacro</a>
+        <a href="https://tally.so/r/GxL852" target="_blank" rel="noopener noreferrer" class="nav-link text-gold" id="footer-link-candidatura">Candidatura</a>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="pt-8 text-center">
+      <p class="font-sans font-light text-stone/60" style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase;">
+        © <span id="footer-year">2026</span> GrimorIa · Ilaria Gonzales · Tutti i diritti riservati
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════ -->
+<script>
+  // Anno dinamico nel footer
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  // Scroll-reveal con IntersectionObserver
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Nav background on scroll
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.classList.add('bg-obsidian/95');
+      nav.classList.remove('bg-obsidian/75');
+    } else {
+      nav.classList.add('bg-obsidian/75');
+      nav.classList.remove('bg-obsidian/95');
+    }
+  }, { passive: true });
+
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', isOpen);
+      mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  }
+  function closeMobileMenu() {
+    mobileMenu && mobileMenu.classList.add('hidden');
+    mobileBtn && mobileBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  // Smooth active nav highlight
+  const sections = document.querySelectorAll('section[id], footer[id]');
+  const navLinks = document.querySelectorAll('nav .nav-link');
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + id) {
+            link.style.color = '#B8924A';
+          } else if (!link.id || link.id !== 'cta-hero-primary') {
+            link.style.color = '';
+          }
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => sectionObserver.observe(s));
+</script>
+
+</body>
+</html>
