@@ -295,3 +295,188 @@ Presenta all'utente un report finale:
 **Costo Apify stimato**: ~$X.XX
 **Prossimo ingest consigliato**: [data +7 giorni]
 ```
+
+## Modalità: Query
+
+### Quando si attiva
+
+Qualsiasi domanda sul database che non sia ingest o manage. Questa è la modalità **default**.
+
+Esempi: "cosa dice Mollick sull'AI?", "chi parla di branding?", "trend della settimana", "confronta X e Y", "insight per la newsletter".
+
+### Tipi di query
+
+Rileva il tipo di query dal messaggio dell'utente:
+
+| Tipo | Pattern nel messaggio | Strategia |
+|------|----------------------|-----------|
+| **Per autore** | Contiene nome di un autore + tema | Carica profile + post dell'autore |
+| **Per tema** | "chi parla di...", "articoli su...", tema senza autore | Scansiona tutti i profiles per tag/temi |
+| **Trend** | "trend", "questa settimana", "ultimi post" | Carica post recenti (ultimi 7-14 giorni) |
+| **Comparazione** | "confronta X e Y", "differenze tra" | Carica profili + post di entrambi |
+| **Per GrimorIa** | "insight per newsletter", "spunti", "ispirazione" | Seleziona post più rilevanti per GrimorIa |
+| **Per engagement** | "più reactions", "post migliori", "top post" | Ordina per reactions |
+
+### Workflow
+
+**Step 1 — Carica indice profili**
+
+Per OGNI query, inizia caricando tutti i file `data/profiles/*.json`. Con ~23 profili, sono ~23 file piccoli (~500 byte ciascuno). Questo dà la mappa completa di chi scrive cosa.
+
+**Step 2 — Filtra per rilevanza**
+
+In base al tipo di query:
+
+- **Per autore**: identifica l'autore (match fuzzy sul nome — "Mollick" → "ethan-mollick"). Carica i suoi post da `data/posts/ethan-mollick_*.json`.
+- **Per tema**: scorri i profiles, filtra per `recurring_themes` e tag che matchano il tema. Carica i post degli autori rilevanti.
+- **Trend**: lista i file in `data/posts/`, filtra per data `published` negli ultimi 7-14 giorni. Carica quei post.
+- **Comparazione**: identifica i 2+ autori. Carica profili e post di ciascuno.
+- **Per GrimorIa**: filtra profili per `relevance_for_grimoria`, poi carica i post recenti con `grimoria_angle` più forte.
+- **Per engagement**: carica tutti i profili, ordina per `avg_reactions` o cerca `top_post`.
+
+**Step 3 — Sintetizza risposta**
+
+Rispondi in italiano, con questa struttura:
+
+```
+## [Risposta alla query]
+
+[Sintesi 3-8 righe]
+
+### Fonti
+
+| Autore | Post | Data | Link |
+|--------|------|------|------|
+| Nome | "Titolo" | YYYY-MM-DD | [leggi](url) |
+
+### Insight per GrimorIa
+[Se rilevante: 1-2 frasi su come usare queste informazioni per GrimorIa]
+```
+
+**Regole della risposta**:
+
+1. Cita SEMPRE le fonti (autore + titolo + link)
+2. Non inventare contenuti — usa solo dati presenti nei JSON
+3. Se non ci sono dati sufficienti, dillo: "Non ho abbastanza dati su questo tema. Vuoi che faccia un ingest per aggiornare?"
+4. Per query "trend", raggruppa per tema, non per autore
+5. Per comparazioni, presenta prima i punti in comune, poi le differenze
+
+---
+
+## Modalità: Manage
+
+### Quando si attiva
+
+L'utente dice "aggiungi autore", "rimuovi", "lista feed", "stats", "gestisci feed", "modifica tag".
+
+### Comandi
+
+#### Aggiungi autore
+
+Trigger: "aggiungi [URL]", "segui [nome/URL]", "nuovo autore"
+
+Workflow:
+1. L'utente fornisce l'URL della newsletter Substack
+2. Valida che sia un URL Substack valido (contiene "substack.com" o è un dominio custom noto)
+3. Chiama Apify per ottenere publication info:
+
+```
+Actor: automation-lab/substack-scraper
+Input:
+  urls: [URL_FORNITO]
+  maxPostsPerNewsletter: 1
+  includeContent: false
+  includePublicationInfo: true
+```
+
+4. Dall'output, estrai: nome autore, descrizione newsletter
+5. Genera `id` (slug dal nome: lowercase, kebab-case)
+6. Chiedi all'utente: "Ho trovato **{nome}** — {descrizione}. Quali tag vuoi assegnare? Suggerisco: {tag suggeriti basati sulla descrizione}"
+7. Dopo conferma, aggiungi entry a `data/feeds.json`:
+
+```json
+{
+  "id": "generated-slug",
+  "name": "Nome Trovato",
+  "url": "URL_FORNITO",
+  "tags": ["tag-confermati"],
+  "notes": "Descrizione dalla publication info",
+  "added": "TODAY_YYYY-MM-DD",
+  "active": true
+}
+```
+
+8. Scrivi il file `data/feeds.json` aggiornato
+9. Conferma: "Aggiunto **{nome}** al database. Vuoi fare un ingest dei suoi post adesso?"
+
+#### Rimuovi autore
+
+Trigger: "rimuovi [nome]", "smetti di seguire [nome]"
+
+Workflow:
+1. Identifica l'autore (match fuzzy sul nome)
+2. Conferma: "Vuoi disattivare **{nome}**? I post già ingestiti resteranno consultabili."
+3. Dopo conferma, metti `active: false` in `data/feeds.json`
+4. NON cancellare i file in `data/posts/` o `data/profiles/`
+
+#### Lista feed
+
+Trigger: "lista feed", "mostra autori", "chi seguo?"
+
+Workflow:
+1. Leggi `data/feeds.json`
+2. Per ogni feed, conta i file in `data/posts/{id}_*.json`
+3. Presenta la tabella:
+
+```
+## Feed seguiti — [N attivi] / [N totali]
+
+| # | Autore | Tag | Post | Ultimo ingest | Stato |
+|---|--------|-----|------|--------------|-------|
+| 1 | Ethan Mollick | AI, education | 15 | 2026-04-10 | ✅ attivo |
+| 2 | ... | ... | ... | ... | ... |
+```
+
+#### Modifica tag
+
+Trigger: "modifica tag di [nome]", "cambia tag [nome]"
+
+Workflow:
+1. Identifica l'autore
+2. Mostra i tag attuali
+3. Chiedi: "Quali tag vuoi impostare? (separati da virgola)"
+4. Aggiorna `data/feeds.json`
+
+#### Stats
+
+Trigger: "stats", "statistiche", "stato del database"
+
+Workflow:
+1. Leggi `data/feeds.json` → conta autori attivi/totali
+2. Conta file in `data/posts/` → totale post
+3. Conta file in `data/profiles/` → profili generati
+4. Analizza i tag da tutti i profili → distribuzione per tema
+5. Trova il post più recente → data ultimo ingest
+6. Presenta:
+
+```
+## Substack Knowledge DB — Stats
+
+- **Autori**: N attivi / M totali
+- **Post totali**: N
+- **Profili generati**: N
+- **Ultimo ingest**: YYYY-MM-DD
+- **Costo Apify stimato prossimo ingest**: ~$X.XX
+
+### Distribuzione per tag
+| Tag | Autori | Post |
+|-----|--------|------|
+| AI | 15 | 120 |
+| business | 8 | 45 |
+| ... | ... | ... |
+
+### Top 5 autori per engagement
+| Autore | Avg reactions | Post |
+|--------|--------------|------|
+| ... | ... | ... |
+```
