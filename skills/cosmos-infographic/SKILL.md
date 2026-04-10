@@ -212,7 +212,7 @@ Ogni infografica è un file HTML self-contained con le seguenti caratteristiche 
 <html>
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     /* Tutto il CSS è inline qui — nessun file esterno */
     /* Dimensioni canvas definite come variabili CSS */
@@ -230,9 +230,9 @@ Ogni infografica è un file HTML self-contained con le seguenti caratteristiche 
 ```
 
 **Font system:**
-- Titoli e headline: `Cinzel` (serif geometrico, evoca incisioni su pietra)
+- Titoli e headline: `Playfair Display` (serif elegante, luxury esoteric)
 - Body e data label: `Inter` (sans-serif precisa, leggibilità massima)
-- Varianti peso: Cinzel 400/600/700 — Inter 300/400/500
+- Varianti peso: Playfair Display 400/500/600/700 (+ italic 400) — Inter 300/400/500/600
 
 **SVG vs CSS per le forme:**
 - Forme complesse (Zodiac Wheel, Bodygraph, Sacred Grid): SVG inline
