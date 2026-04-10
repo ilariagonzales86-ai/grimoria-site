@@ -7,7 +7,7 @@
       "tags": ["AI", "education", "future-of-work"],
       "notes": "Prof Wharton, voce autorevole su AI nel lavoro",
       "added": "2026-04-10",
-      "active": true
+      "active": false
     },
     {
       "id": "simon-sinek",
@@ -16,7 +16,7 @@
       "tags": ["leadership", "purpose", "business"],
       "notes": "Start With Why, leadership e purpose",
       "added": "2026-04-10",
-      "active": true
+      "active": false
     },
     {
       "id": "the-ai-exchange",
@@ -97,7 +97,7 @@
       "tags": ["AI", "personal-growth", "consciousness"],
       "notes": "",
       "added": "2026-04-10",
-      "active": true
+      "active": false
     },
     {
       "id": "artificial-corner",
