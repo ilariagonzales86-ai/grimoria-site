@@ -1,0 +1,30 @@
+{
+  "id": "ethan-mollick_2026-03-12_the-shape-of-the-thing",
+  "author_id": "ethan-mollick",
+  "author_name": "Ethan Mollick",
+  "title": "The Shape of the Thing",
+  "url": "https://www.oneusefulthing.org/p/the-shape-of-the-thing",
+  "published": "2026-03-12",
+  "ingested": "2026-04-10T07:41:00",
+  "word_count": 1923,
+  "type": "newsletter",
+  "is_free": true,
+  "reactions": 947,
+  "comments_count": 70,
+  "tags": [
+    "AI",
+    "exponential-growth",
+    "agents",
+    "future-of-work",
+    "disruption",
+    "benchmarks"
+  ],
+  "summary": "Mollick fa il punto sullo stato dell AI a marzo 2026: miglioramento esponenziale su tutti i benchmark (METR, GPQA, GDPval, HLE), agenti pratici (Claude Code, Codex, OpenClaw), e primi esperimenti radicali come la Software Factory di StrongDM. Argomenta che stiamo entrando in una fase di \"rolling disruption\" imprevedibile — mercati, lavoro, governi reagiscono in modo caotico. Il self-improvement ricorsivo non è più fantascienza ma è nella roadmap di ogni lab.",
+  "key_insights": [
+    "Il miglioramento esponenziale dell AI è visibile su tutti i benchmark — dalla generazione video ai test di ragionamento, con pochi segni di rallentamento",
+    "Esperimenti radicali come la Software Factory di StrongDM (3 persone, codice scritto e testato interamente da AI) mostrano come gli agenti possono ristrutturare interi flussi di lavoro",
+    "Il self-improvement ricorsivo (RSI) è ora esplicitamente nella roadmap di ogni major AI lab — OpenAI afferma che il suo ultimo modello \"è stato strumentale nel creare se stesso\""
+  ],
+  "content_preview": "In October of 2023, I wrote about the \"Shape of the Shadow of the Thing,\" speculating on the Thing that AI might turn into in the coming years. I think we can see the Thing much more clearly now, and some of the consequences that come with it. As I have been discussing in recent posts, we have entered a new phase of AI. After ChatGPT was introduced, human-AI work took the form of what I called co-intelligence, where humans would prompt AI back-and-forth to get help on tasks. Starting in late 2025, we entered a new era thanks to AI agents like Claude Code, OpenAI's Codex, and OpenClaw. These are AI systems that you can just give work to, sometimes hours of human work, and get back reasonable and useful results in minutes. This is an era of managing AIs, rather than working with them. This new approach to AI is the outcome of the rapid exponential improvement in AI abilities. That means you can't understand where we are, and where we might be going, without understanding the increasing capability of AI. Exponential improvements are hard to visualize, so rather than charts or graphs, I want to start with otters. If you have followed my writing on AI, you know about my Otter Test, where I challenge various AI image models to show a picture of an \"otter on a plane using wifi.\" As you can see below, the progress from 2022 to 2025 was rapid and remarkable. So, what has happened in the time since that April, 2025 image? With nearly perfect images, video has become the new frontier and has also seen exponential gains. Aside from a single pronunciation mistake, this is pretty perfect. Of course, video models are cool, but they are not necessarily indicative of what useful agentic AI can do. So, what if we look at the benchmarks of AI ability, do we see the same exponential curve? We certainly do in the most famous evaluation in AI today, the METR Long Tasks graph.",
+  "grimoria_angle": "La tesi del \"rolling disruption\" rafforza l urgenza di GrimorIa: in un mondo dove il cambiamento è continuo e imprevedibile, avere una bussola interiore (Human Design, Gene Keys) diventa ancora più critico. GrimorIa si posiziona come strumento per navigare l incertezza — non predire il futuro, ma aiutare le persone a capire come possono contribuire in modo autentico."
+}

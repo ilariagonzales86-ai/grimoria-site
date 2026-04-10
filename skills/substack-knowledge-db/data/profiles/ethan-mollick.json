@@ -1,0 +1,19 @@
+{
+  "id": "ethan-mollick",
+  "name": "Ethan Mollick",
+  "bio": "Professore alla Wharton School (Università della Pennsylvania), ricercatore su imprenditorialità, innovazione e AI. Autore di \"Co-Intelligence\". Voce tra le più autorevoli al mondo sull impatto dell AI su lavoro, educazione e organizzazioni. Scrive con approccio pragmatico e basato su evidenze.",
+  "recurring_themes": [
+    "AI agents e automazione",
+    "interfacce AI e UX",
+    "futuro del lavoro",
+    "miglioramento esponenziale AI",
+    "benchmark e capability",
+    "disruption organizzativa"
+  ],
+  "stance": "Ottimista pragmatico sull AI — riconosce limiti e rischi ma enfatizza le opportunità concrete. Focus su esperimenti reali, non hype. Crede che le interfacce (non i modelli) siano il bottleneck attuale per l adozione dell AI.",
+  "total_posts": 2,
+  "avg_reactions": 821,
+  "top_post": "The Shape of the Thing (947 reactions)",
+  "last_ingested": "2026-04-10",
+  "relevance_for_grimoria": "Voce forte su AI come amplificatore delle capacità umane, non sostituto — perfettamente allineato con la visione GrimorIa. I suoi insight su interfacce adattive e agenti personali offrono modelli concreti per come GrimorIa potrebbe servire i clienti. La sua tesi sulla \"rolling disruption\" rafforza il valore di strumenti di auto-conoscenza (HD, GK) per navigare l incertezza."
+}
