@@ -1,0 +1,211 @@
+{
+  "feeds": [
+    {
+      "id": "ethan-mollick",
+      "name": "Ethan Mollick",
+      "url": "https://oneusefulthing.substack.com",
+      "tags": ["AI", "education", "future-of-work"],
+      "notes": "Prof Wharton, voce autorevole su AI nel lavoro",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "simon-sinek",
+      "name": "Simon Sinek",
+      "url": "https://simonsinek.substack.com",
+      "tags": ["leadership", "purpose", "business"],
+      "notes": "Start With Why, leadership e purpose",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "the-ai-exchange",
+      "name": "The AI Exchange",
+      "url": "https://theaiexchange.substack.com",
+      "tags": ["AI", "business", "tools"],
+      "notes": "AI tools e strategie per business",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "kooping-shung",
+      "name": "Kooping Shung",
+      "url": "https://koopingshung.substack.com",
+      "tags": ["AI", "productivity", "personal-growth"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "founders-corner",
+      "name": "The Founders Corner",
+      "url": "https://www.the-founders-corner.com",
+      "tags": ["startup", "entrepreneurship", "business"],
+      "notes": "Community fondatori e imprenditori",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "cristina",
+      "name": "Cristina",
+      "url": "https://cristina735772.substack.com",
+      "tags": ["personal-growth", "spirituality"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "a-temple-jar",
+      "name": "A Temple Jar",
+      "url": "https://atemplejar.substack.com",
+      "tags": ["spirituality", "consciousness", "personal-growth"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "aiblew-my-mind",
+      "name": "AIBlew My Mind",
+      "url": "https://aiblewmymind.substack.com",
+      "tags": ["AI", "innovation", "technology"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "lorena-bordonaba",
+      "name": "Lorena Bordonaba",
+      "url": "https://lorenabordonaba.substack.com",
+      "tags": ["business", "personal-brand", "entrepreneurship"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "ai-meets-girlboss",
+      "name": "AI Meets Girlboss",
+      "url": "https://aimeetsgirlboss.substack.com",
+      "tags": ["AI", "women-in-business", "entrepreneurship"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "ai-but-intimate",
+      "name": "AI But Intimate",
+      "url": "https://aibutintimate.substack.com",
+      "tags": ["AI", "personal-growth", "consciousness"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "artificial-corner",
+      "name": "Artificial Corner",
+      "url": "https://artificialcorner.com",
+      "tags": ["AI", "tools", "tutorials"],
+      "notes": "Custom domain, non subdomain Substack",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "claude-code-masterclass",
+      "name": "Claude Code Masterclass",
+      "url": "https://newsletter.claudecodemasterclass.com",
+      "tags": ["AI", "claude", "coding", "automation"],
+      "notes": "Custom domain, newsletter su Claude Code",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "emerging-ai",
+      "name": "Emerging AI",
+      "url": "https://emergingai.substack.com",
+      "tags": ["AI", "research", "emerging-tech"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "ruben",
+      "name": "Ruben",
+      "url": "https://ruben.substack.com",
+      "tags": ["AI", "business", "strategy"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "nina-schick",
+      "name": "Nina Schick",
+      "url": "https://ninaschick.substack.com",
+      "tags": ["AI", "deepfakes", "media", "geopolitics"],
+      "notes": "Esperta AI e disinformazione",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "inside-small-giants",
+      "name": "Inside Small Giants",
+      "url": "https://www.insidesmallgiants.com",
+      "tags": ["entrepreneurship", "small-business", "growth"],
+      "notes": "Custom domain",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "mkt1",
+      "name": "MKT1",
+      "url": "https://newsletter.mkt1.co",
+      "tags": ["marketing", "growth", "startup"],
+      "notes": "Custom domain, marketing per startup",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "nate",
+      "name": "Nate",
+      "url": "https://natesnewsletter.substack.com",
+      "tags": ["AI", "business", "productivity"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "the-slow-ai",
+      "name": "The Slow AI",
+      "url": "https://theslowai.substack.com",
+      "tags": ["AI", "mindfulness", "intentional-tech"],
+      "notes": "AI con approccio consapevole",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "ten-speed",
+      "name": "Ten Speed",
+      "url": "https://newsletter.tenspeed.io",
+      "tags": ["SEO", "content-marketing", "AI"],
+      "notes": "Custom domain, SEO e content",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "intelligence-briefing",
+      "name": "Intelligence Briefing",
+      "url": "https://intelligencebriefing.substack.com",
+      "tags": ["AI", "research", "analysis"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    },
+    {
+      "id": "augmented-mind",
+      "name": "Augmented Mind",
+      "url": "https://augmentedmind.substack.com",
+      "tags": ["AI", "cognition", "productivity"],
+      "notes": "",
+      "added": "2026-04-10",
+      "active": true
+    }
+  ]
+}
