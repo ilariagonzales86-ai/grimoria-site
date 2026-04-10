@@ -1,0 +1,14 @@
+name: substack-knowledge-db
+description: >
+  Skill per gestire il database di conoscenza delle newsletter Substack.
+  Usa questa skill OGNI VOLTA che l'utente chiede di: ingerire/scaricare/aggiornare
+  i post delle newsletter Substack, interrogare il database delle newsletter
+  ("cosa dice X su Y?", "chi parla di Z?", "trend della settimana"),
+  gestire i feed seguiti (aggiungere autore, rimuovere, lista feed, stats),
+  o qualsiasi operazione sul "substack knowledge db", "database newsletter",
+  "knowledge base substack". Trigger anche con: "ingest substack", "query newsletter",
+  "gestisci feed", "substack db", "newsletter database".
+  NON usare per scrivere Note Substack (usa substack-notes-writer),
+  per analisi di carte natali (usa astro-hd-gk-profiler),
+  o per il Grimoria Magazine HTML (quello e' substack_summarizer).
+skill_file: SKILL.md
