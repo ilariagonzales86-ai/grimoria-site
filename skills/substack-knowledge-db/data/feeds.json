@@ -206,6 +206,15 @@
       "notes": "",
       "added": "2026-04-10",
       "active": true
+    },
+    {
+      "id": "erik-hoel",
+      "name": "Erik Hoel",
+      "url": "https://erikhoel.substack.com",
+      "tags": ["consciousness", "neuroscience", "AI", "philosophy", "writing"],
+      "notes": "Neuroscienziato e scrittore, The Intrinsic Perspective. Critico lucido dell'AI hype, focus su coscienza e cosa rende unica l'intelligenza umana.",
+      "added": "2026-04-11",
+      "active": true
     }
   ]
 }
