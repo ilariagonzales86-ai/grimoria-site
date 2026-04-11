@@ -215,6 +215,168 @@
       "notes": "Neuroscienziato e scrittore, The Intrinsic Perspective. Critico lucido dell'AI hype, focus su coscienza e cosa rende unica l'intelligenza umana.",
       "added": "2026-04-11",
       "active": true
+    },
+    {
+      "id": "eric-schwitzgebel",
+      "name": "Eric Schwitzgebel",
+      "url": "https://schwitzsplinters.substack.com",
+      "tags": ["consciousness", "philosophy-of-mind", "philosophy", "ethics"],
+      "notes": "The Splintered Mind. Filosofo della mente, UC Riverside. Esplora coscienza, moralità, esperienza soggettiva con rigore analitico e ironia.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "dharma-lab",
+      "name": "Cortland Dahl & Richie Davidson",
+      "url": "https://dharmalab.substack.com",
+      "tags": ["consciousness", "meditation", "neuroscience", "contemplative", "wellbeing"],
+      "notes": "Dharma Lab. Scienza contemplativa incontra neuroscienze. Richie Davidson fondatore del Center for Healthy Minds (UW-Madison).",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "sarah-constantin",
+      "name": "Sarah Constantin",
+      "url": "https://sarahconstantin.substack.com",
+      "tags": ["philosophy", "rationalism", "personal-growth", "science", "consciousness"],
+      "notes": "Rough Diamonds. Voce della comunità razionalista, scrive di scienza, etica, crescita personale con rigore e onestà intellettuale.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "nick-jikomes",
+      "name": "Nick Jikomes",
+      "url": "https://mindandmatter.substack.com",
+      "tags": ["neuroscience", "consciousness", "psychedelics", "science", "health"],
+      "notes": "Mind & Matter. Neuroscienziato, esplora cervello, psichedelia, salute e cognizione con approccio scientifico accessibile.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "andres-gomez-emilsson",
+      "name": "Andrés Gómez Emilsson",
+      "url": "https://qualiacomputing.substack.com",
+      "tags": ["consciousness", "qualia", "philosophy-of-mind", "psychedelics", "transhumanism"],
+      "notes": "Qualia Computing. Co-fondatore del Qualia Research Institute. Esplora la struttura matematica dell'esperienza soggettiva e la riduzione della sofferenza.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "rupert-spira",
+      "name": "Rupert Spira",
+      "url": "https://rupertspiranl.substack.com",
+      "tags": ["non-duality", "consciousness", "spirituality", "philosophy", "presence"],
+      "notes": "The Transparency of Things. Insegnante non-duale, esplora la natura della coscienza pura e l'esperienza diretta del Sé.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "sasha-chapin",
+      "name": "Sasha Chapin",
+      "url": "https://sashachapin.substack.com",
+      "tags": ["writing", "meditation", "consciousness", "personal-growth", "culture"],
+      "notes": "Sasha's Newsletter. Scrittore e meditatore, voce acuta e personale su mente, scrittura, e vita interiore.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "joan-tollifson",
+      "name": "Joan Tollifson",
+      "url": "https://joantollifson.substack.com",
+      "tags": ["non-duality", "spirituality", "consciousness", "presence", "acceptance"],
+      "notes": "Scrittrice e insegnante spirituale, esplora la liberazione dalla sofferenza attraverso la presenza e la non-dualità.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "kenneth-rose",
+      "name": "Kenneth Rose",
+      "url": "https://kennethrose.substack.com",
+      "tags": ["consciousness", "spirituality", "mysticism", "philosophy", "contemplative"],
+      "notes": "Burning Toward Transcendence. Studioso di mistica e religione comparata, esplora i territori della coscienza espansa.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "jude-star",
+      "name": "Jude Star",
+      "url": "https://judestar.substack.com",
+      "tags": ["consciousness", "integration", "spirituality", "personal-growth", "psychology"],
+      "notes": "Being Integrated. Esplora l'integrazione di esperienze non ordinarie, crescita e salute mentale.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "ethan-nelson",
+      "name": "Ethan Nelson",
+      "url": "https://ethannelson.substack.com",
+      "tags": ["consciousness", "spirituality", "personal-growth", "meditation", "awareness"],
+      "notes": "Become Conscious. Esplora pratiche e prospettive per espandere la consapevolezza e vivere con maggiore presenza.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "scott-britton",
+      "name": "Scott Britton",
+      "url": "https://scottbritton.substack.com",
+      "tags": ["consciousness", "spirituality", "non-duality", "personal-growth", "meditation"],
+      "notes": "Consciousness ∞. Esplora la natura infinita della coscienza, pratiche contemplative e trasformazione interiore.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "jeff-warren",
+      "name": "Jeff Warren",
+      "url": "https://jeffwarren.substack.com",
+      "tags": ["meditation", "consciousness", "mindfulness", "science", "personal-growth"],
+      "notes": "Home Base. Scrittore e insegnante di meditazione, autore di The Head Trip. Rende accessibile la scienza della mente contemplativa.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "layman-pascal",
+      "name": "Layman Pascal",
+      "url": "https://laymanpascal.substack.com",
+      "tags": ["integral", "consciousness", "metamodernism", "philosophy", "spirituality"],
+      "notes": "Pensatore integrale e metamodernista, esplora la sintesi di tradizioni contemplative, filosofia e cultura contemporanea.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "brendan-graham-dempsey",
+      "name": "Brendan Graham Dempsey",
+      "url": "https://brendangrahamdempsey.substack.com",
+      "tags": ["emergentism", "metamodernism", "consciousness", "philosophy", "spirituality"],
+      "notes": "Emergentism. Filosofo e scrittore, esplora spiritualità post-secolare, metamodernismo e l'emergenza di nuove forme di sacro.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "jorge-ferrer",
+      "name": "Jorge Ferrer",
+      "url": "https://jorgeferrer.substack.com",
+      "tags": ["integral", "consciousness", "participatory", "spirituality", "philosophy"],
+      "notes": "The Participatory Way. Accademico e ricercatore, sviluppatore dell'approccio partecipativo alla spiritualità e alla conoscenza contemplativa.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "jeremy-d-johnson",
+      "name": "Jeremy D. Johnson",
+      "url": "https://jeremydjohnson.substack.com",
+      "tags": ["consciousness", "metamodernism", "culture", "spirituality", "integral"],
+      "notes": "Mutations. Esplora la mutazione culturale, la coscienza e i nuovi paradigmi spirituali attraverso una lente integrale e metamodernista.",
+      "added": "2026-04-11",
+      "active": true
+    },
+    {
+      "id": "neil-durrant",
+      "name": "Neil Durrant",
+      "url": "https://neildurrant.substack.com",
+      "tags": ["consciousness", "philosophy", "spirituality", "provocations", "integral"],
+      "notes": "Provocations. Pensatore e scrittore, sfida le assunzioni convenzionali su coscienza, identità e crescita interiore.",
+      "added": "2026-04-11",
+      "active": true
     }
   ]
 }
