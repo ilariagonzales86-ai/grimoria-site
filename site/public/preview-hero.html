@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preview Hero — 3 varianti · GrimorIa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <!-- Design tokens -->
+  <link rel="stylesheet" href="/assets/tokens.css"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-weight: var(--fw-light);
+      line-height: var(--lh-body-loose);
+      background: var(--obsidian);
+      color: var(--pearl);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--gold-dim); color: var(--gold); }
+
+    /* ── Variant tag ────────────────────────────────────────── */
+    .variant-tag {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      background: rgba(14, 14, 16, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-inverse);
+      font-family: var(--font-body);
+      font-size: var(--fs-label);
+      font-weight: var(--fw-semibold);
+      letter-spacing: var(--ls-label);
+      text-transform: uppercase;
+      color: var(--pearl);
+    }
+    .variant-tag .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--obsidian);
+      font-family: var(--font-display);
+      font-weight: var(--fw-bold);
+      font-size: 0.75rem;
+      letter-spacing: 0;
+    }
+    .variant-tag .note {
+      font-weight: var(--fw-light);
+      color: var(--stone);
+      letter-spacing: 0.08em;
+      text-transform: none;
+    }
+    .variant-tag .label-emerald {
+      color: var(--emerald);
+      letter-spacing: var(--ls-label-wide);
+    }
+
+    /* ── Hero shared ────────────────────────────────────────── */
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+      background: var(--obsidian);
+      color: var(--pearl);
+    }
+    .hero-row {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 1024px) {
+      .hero-row { flex-direction: row; }
+    }
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(4rem, 8vw, 6rem) clamp(2.5rem, 6vw, 5rem);
+      position: relative;
+      z-index: 10;
+    }
+    .hero-visual {
+      display: none;
+      position: relative;
+      width: 42%;
+      overflow: hidden;
+    }
+    @media (min-width: 1024px) {
+      .hero-visual { display: block; }
+    }
+    .hero-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) contrast(1.05);
+    }
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(14,14,16,0.2);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: var(--fw-semibold);
+      letter-spacing: var(--ls-label-wide);
+      text-transform: uppercase;
+      color: var(--emerald);
+      margin-bottom: 2rem;
+    }
+
+    .hero-sub {
+      font-family: var(--font-body);
+      font-weight: var(--fw-light);
+      color: var(--stone);
+      font-size: 1.05rem;
+      line-height: var(--lh-body-loose);
+      max-width: 34rem;
+      margin: 1.75rem 0 2.5rem;
+    }
+    .hero-sub em {
+      font-style: normal;
+      color: rgba(237, 234, 228, 0.85);
+    }
+    .hero-sub .quote {
+      display: block;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: var(--fw-regular);
+      color: rgba(237, 234, 228, 0.7);
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--obsidian);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: var(--fw-semibold);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.25rem 3rem;
+      transition: background var(--dur-base) var(--ease-std), color var(--dur-base) var(--ease-std);
+    }
+    .btn-gold:hover { background: var(--emerald); color: var(--pearl); }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--pearl);
+      border: 1px solid var(--border-inverse-strong);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: var(--fw-medium);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2.5rem;
+      transition: border-color var(--dur-base) var(--ease-std), color var(--dur-base) var(--ease-std);
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    .fineprint {
+      margin-top: 1.5rem;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(237, 234, 228, 0.35);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       VARIANT A — Amplification (attuale × cinematografico)
+       ═══════════════════════════════════════════════════════════ */
+    .hero-a .h1 {
+      font-family: var(--font-display);
+      font-weight: var(--fw-bold);
+      color: var(--pearl);
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      line-height: 0.95;
+      letter-spacing: -0.035em;
+      margin: 0 0 0.5rem;
+      max-width: 16ch;
+    }
+    .hero-a .h1 em {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: var(--fw-regular);
+      color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       VARIANT B — Soul Statement (word-coloring su "Soul")
+       ═══════════════════════════════════════════════════════════ */
+    .hero-b .h1 {
+      font-family: var(--font-display);
+      font-weight: var(--fw-semibold);
+      color: var(--pearl);
+      font-size: clamp(3.5rem, 9.5vw, 8.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      margin: 0 0 0.5rem;
+    }
+    .hero-b .h1 .line-1 { display: block; }
+    .hero-b .h1 .line-2 { display: block; padding-left: 0; }
+    .hero-b .h1 .accent {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: var(--fw-regular);
+      background: linear-gradient(90deg, var(--gold) 0%, #d9b97a 65%, var(--pearl) 120%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       VARIANT C — Brand Purity (IT, "essenza" in gold)
+       ═══════════════════════════════════════════════════════════ */
+    .hero-c .h1 {
+      font-family: var(--font-display);
+      font-weight: var(--fw-semibold);
+      color: var(--pearl);
+      font-size: clamp(3rem, 7.5vw, 6.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.5rem;
+      max-width: 14ch;
+    }
+    .hero-c .h1 em {
+      font-style: italic;
+      font-weight: var(--fw-regular);
+      color: var(--gold);
+    }
+    .hero-c .kicker {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      font-weight: var(--fw-regular);
+      color: rgba(237,234,228,0.65);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     VARIANT A — Amplification
+═══════════════════════════════════════════ -->
+<div class="variant-tag">
+  <span class="pill">A</span>
+  <span>Variante A · Amplification</span>
+  <span class="note">— tuo H1 attuale portato a scala cinematografica, zero cambi di copy</span>
+</div>
+
+<section class="hero hero-a">
+  <div class="hero-row">
+    <div class="hero-content">
+      <span class="eyebrow">✦ Architettura dell'Essenza</span>
+      <h1 class="h1">
+        Strategy <br/>
+        <em>meets</em> Soul.
+      </h1>
+      <div class="hero-sub">
+        <span class="quote">"Ti restituisco alla tua natura — e da lì, tutto si riordina."</span>
+        Hai <em>troppe idee e troppo poco sistema</em>. Qui trovi l'unica strategia che funziona davvero — la tua — disegnata leggendo il tuo <em>Human Design, Gene Keys e Carta Natale</em> con la precisione di un'AI.
+      </div>
+      <div class="cta-row">
+        <a href="#" class="btn-gold">Candidati al Perimetro</a>
+        <a href="#" class="btn-outline">Scopri il Metodo →</a>
+      </div>
+      <p class="fineprint">Selezione discrezionale · Candidature aperte</p>
+    </div>
+    <div class="hero-visual">
+      <img src="/assets/hero-essenza.jpg" alt=""/>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     VARIANT B — Soul Statement
+═══════════════════════════════════════════ -->
+<div class="variant-tag">
+  <span class="pill">B</span>
+  <span>Variante B · Soul Statement</span>
+  <span class="note">— word-coloring sulla parola-destino "Soul" con sfumatura Gold→Pearl, kerning stretto, stacking editoriale</span>
+</div>
+
+<section class="hero hero-b">
+  <div class="hero-row">
+    <div class="hero-content">
+      <span class="eyebrow label-emerald">✦ Architettura dell'Essenza</span>
+      <h1 class="h1">
+        <span class="line-1">Strategy meets</span>
+        <span class="line-2"><span class="accent">Soul.</span></span>
+      </h1>
+      <div class="hero-sub">
+        <span class="quote">"Ti restituisco alla tua natura — e da lì, tutto si riordina."</span>
+        Hai <em>troppe idee e troppo poco sistema</em>. Qui trovi l'unica strategia che funziona davvero — la tua — disegnata leggendo il tuo <em>Human Design, Gene Keys e Carta Natale</em> con la precisione di un'AI.
+      </div>
+      <div class="cta-row">
+        <a href="#" class="btn-gold">Candidati al Perimetro</a>
+        <a href="#" class="btn-outline">Scopri il Metodo →</a>
+      </div>
+      <p class="fineprint">Selezione discrezionale · Candidature aperte</p>
+    </div>
+    <div class="hero-visual">
+      <img src="/assets/hero-essenza.jpg" alt=""/>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     VARIANT C — Brand Purity (italiano)
+═══════════════════════════════════════════ -->
+<div class="variant-tag">
+  <span class="pill">C</span>
+  <span>Variante C · Brand Purity</span>
+  <span class="note">— headline italiano che rispecchia "Architettura dell'Essenza", "essenza" in gold italic, kicker pull-quote</span>
+</div>
+
+<section class="hero hero-c">
+  <div class="hero-row">
+    <div class="hero-content">
+      <span class="eyebrow">✦ Matematica Cosmica + Cybernetica Esecutiva</span>
+      <p class="kicker">Per leader che non vogliono più scegliere<br/>tra ciò che sentono e ciò che funziona.</p>
+      <h1 class="h1">
+        L'architettura<br/>
+        della tua <em>essenza</em><br/>
+        strategica.
+      </h1>
+      <div class="hero-sub">
+        Non comprerai una consulenza. Riceverai il tuo <em>Sistema Operativo Originario</em> — letto attraverso Human Design, Gene Keys e Astrologia con la precisione di un'AI — e finalmente smetterai di adattarti.
+      </div>
+      <div class="cta-row">
+        <a href="#" class="btn-gold">Candidati al Perimetro</a>
+        <a href="#" class="btn-outline">Scopri il Metodo →</a>
+      </div>
+      <p class="fineprint">Selezione discrezionale · Candidature aperte</p>
+    </div>
+    <div class="hero-visual">
+      <img src="/assets/hero-essenza.jpg" alt=""/>
+    </div>
+  </div>
+</section>
+
+
+<div style="padding:3rem 2rem; text-align:center; background:var(--midnight); color:var(--stone); font-size:0.75rem; letter-spacing:0.22em; text-transform:uppercase;">
+  Fine preview · 3 varianti hero · <a href="/" style="color:var(--gold); text-decoration:none;">← Torna al sito</a>
+</div>
+
+</body>
+</html>
