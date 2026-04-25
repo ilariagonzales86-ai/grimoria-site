@@ -1217,6 +1217,26 @@
         Lo riceverai nella tua inbox entro 48 ore.<br/>
         Controlla anche la cartella promozioni per sicurezza.
       </p>
+
+      <!-- Chart widget — esplora la tua carta natale mentre attendi -->
+      <div class="audit-chart" style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid rgba(58,53,48,0.12);">
+        <span class="eyebrow eyebrow-emerald" style="display:inline-block; margin-bottom:1rem;">✦ Mentre attendi</span>
+        <h4 class="font-serif font-bold text-obsidian mb-3" style="font-size:clamp(1.25rem,2vw,1.6rem); letter-spacing:-0.02em;">
+          Esplora la tua <em class="text-gold">Carta Natale</em>.
+        </h4>
+        <p class="font-sans font-light text-charcoal mb-6" style="font-size:0.95rem; line-height:1.7; max-width:520px;">
+          Inserisci i tuoi dati di nascita per visualizzare la tua carta —
+          il punto di partenza di ogni lettura strategica.
+        </p>
+        <div class="audit-chart-frame" style="border:1px solid rgba(58,53,48,0.12); border-radius:8px; overflow:hidden; background:#fff;">
+          <iframe id="chartWidget"
+                  src="https://neutrinoplatform.com/widget/chart/new?apiKey=c5471db3154b3ffeb8748b0e8895e222cafc9f31"
+                  style="width:100%; height:450px; display:block;"
+                  frameborder="0"
+                  title="Carta natale — widget Neutrino"
+                  onload="(function(){var iframe=document.getElementById('chartWidget');var originalHeight=iframe.offsetHeight;window.addEventListener('message',function(event){if(iframe&&event.data){var newHeight=originalHeight+parseInt(event.data,10);iframe.style.height=newHeight+'px';}},false);})();"></iframe>
+        </div>
+      </div>
     </div>
 
   </div>
