@@ -1704,7 +1704,7 @@
         console.error('[audit]', err);
         auditBtn.disabled = false;
         auditBtn.textContent = originalLabel;
-        alert('Qualcosa è andato storto. Riprova tra poco o scrivi a grimoria.agency@gmail.com');
+        alert('Qualcosa è andato storto. Dettaglio tecnico: ' + (err && err.message ? err.message : err) + '\n\nRiprova tra poco o scrivi a grimoria.agency@gmail.com');
       }
     });
   }
