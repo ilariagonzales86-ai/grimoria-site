@@ -360,6 +360,25 @@
     }
     .audit-input::placeholder { color: var(--stone, #7A7670); font-weight: 300; }
     .audit-field { margin-bottom: 1.75rem; }
+    .audit-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    @media (max-width: 540px) {
+      .audit-row { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .audit-sublabel {
+      display: block;
+      font-family: var(--font-body, sans-serif);
+      font-size: 0.7rem;
+      font-weight: var(--fw-light, 300);
+      color: var(--stone, #7A7670);
+      margin-top: 0.4rem;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .audit-sublabel em { color: var(--charcoal, #3A3530); font-style: italic; }
     .audit-options { display: grid; gap: 0.5rem; }
     .audit-option {
       display: flex;
@@ -1144,12 +1163,32 @@
     </div>
 
     <!-- Form -->
-    <form id="audit-form" class="audit-card reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+    <form id="audit-form"
+          class="audit-card reveal"
+          action="https://formsubmit.co/grimoria.agency@gmail.com"
+          method="POST"
+          novalidate>
+      <input type="hidden" name="_subject" value="Nuovo Audit Astro-Strategico — grimoria.it"/>
+      <input type="hidden" name="_captcha" value="false"/>
+      <input type="hidden" name="_template" value="table"/>
 
-      <!-- Q1 — data di nascita -->
+      <!-- Q1 — dati di nascita (data, ora, luogo) -->
       <div class="audit-field">
-        <label class="audit-label" for="audit-birthdate">1 · Data di nascita</label>
-        <input type="date" id="audit-birthdate" name="birthdate" class="audit-input" required/>
+        <span class="audit-label">1 · I tuoi dati di nascita</span>
+        <div class="audit-row">
+          <div>
+            <input type="date" id="audit-birthdate" name="birthdate" class="audit-input" required aria-label="Data di nascita" placeholder="Data"/>
+            <span class="audit-sublabel">Data <em>(richiesta)</em></span>
+          </div>
+          <div>
+            <input type="time" id="audit-birthtime" name="birthtime" class="audit-input" aria-label="Ora di nascita" placeholder="Ora"/>
+            <span class="audit-sublabel">Ora <em>(se la sai)</em></span>
+          </div>
+        </div>
+        <div style="margin-top:1.25rem;">
+          <input type="text" id="audit-birthplace" name="birthplace" class="audit-input" required autocomplete="off" placeholder="es. Rimini, Italia" aria-label="Luogo di nascita"/>
+          <span class="audit-sublabel">Città e nazione di nascita <em>(richiesta)</em></span>
+        </div>
       </div>
 
       <!-- Q2 — situazione -->
@@ -1196,8 +1235,8 @@
         <input type="email" id="audit-email" name="email" class="audit-input" placeholder="tua@email.it" autocomplete="email" required/>
       </div>
 
-      <!-- Honeypot anti-spam (Formspree convention) -->
-      <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off"/>
+      <!-- Honeypot anti-spam (FormSubmit convention) -->
+      <input type="text" name="_honey" style="display:none !important" tabindex="-1" autocomplete="off"/>
 
       <button type="submit" id="audit-submit" class="btn-gold audit-submit">Ricevi il tuo audit →</button>
 
@@ -1629,8 +1668,8 @@
       e.preventDefault();
 
       // Honeypot: if filled, silently succeed (bot)
-      const gotcha = auditForm.querySelector('[name="_gotcha"]');
-      if (gotcha && gotcha.value) {
+      const honey = auditForm.querySelector('[name="_honey"]');
+      if (honey && honey.value) {
         auditForm.hidden = true;
         auditSent.hidden = false;
         return;
@@ -1647,19 +1686,12 @@
       auditBtn.textContent = 'Trasmissione in corso…';
 
       try {
-        // If endpoint is still the placeholder, simulate success (dev mode)
-        const isPlaceholder = auditForm.action.includes('YOUR_FORM_ID');
-        if (isPlaceholder) {
-          console.info('[audit] Formspree endpoint not configured — simulating success. Replace YOUR_FORM_ID in the form action.');
-          await new Promise(r => setTimeout(r, 600));
-        } else {
-          const res = await fetch(auditForm.action, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: new FormData(auditForm),
-          });
-          if (!res.ok) throw new Error('submit failed ' + res.status);
-        }
+        const res = await fetch(auditForm.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(auditForm),
+        });
+        if (!res.ok) throw new Error('submit failed ' + res.status);
 
         auditForm.hidden = true;
         auditSent.hidden = false;
