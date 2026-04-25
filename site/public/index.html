@@ -1165,7 +1165,7 @@
     <!-- Form -->
     <form id="audit-form"
           class="audit-card reveal"
-          action="https://formsubmit.co/grimoria.agency@gmail.com"
+          action="https://formsubmit.co/ajax/grimoria.agency@gmail.com"
           method="POST"
           novalidate>
       <input type="hidden" name="_subject" value="Nuovo Audit Astro-Strategico — grimoria.it"/>
@@ -1692,6 +1692,10 @@
           body: new FormData(auditForm),
         });
         if (!res.ok) throw new Error('submit failed ' + res.status);
+        const data = await res.json();
+        if (data.success !== 'true' && data.success !== true) {
+          throw new Error('submit rejected: ' + (data.message || 'unknown'));
+        }
 
         auditForm.hidden = true;
         auditSent.hidden = false;
