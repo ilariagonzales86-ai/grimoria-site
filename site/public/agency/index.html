@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Ilaria Gonzales — Sistemi AI, Agenti & Strategia</title>
-<meta name="description" content="Aiuto fondatrici, imprenditori e team piccoli a trasformare l'AI nel loro vantaggio quotidiano. Meno ore perse, più risultati — dalla prima chiacchierata alla consegna."/>
+<meta name="description" content="Aiuto fondatrici, imprenditori e aziende a trasformare l'AI nel loro vantaggio quotidiano. Meno ore perse, più risultati — dalla prima chiacchierata alla consegna."/>
 <meta property="og:title" content="Ilaria Gonzales — L'AI che lavora al posto tuo"/>
 <meta property="og:description" content="Costruisco strumenti AI che fanno il lavoro ripetitivo al posto tuo. Meno ore perse, più tempo per quello che conta."/>
 <meta property="og:type" content="website"/>
@@ -254,98 +254,184 @@ section{padding:clamp(90px,11vw,160px) 0;position:relative}
   .about-photo-wrap{max-width:380px}
 }
 
-/* ═════════════ services ═════════════ */
+/* ═════════════ services 2×2 ═════════════ */
 .services{border-top:1px solid var(--border-light);background:linear-gradient(180deg,transparent,rgba(184,146,74,.025) 40%,transparent)}
-.svc-list{border-top:1px solid var(--border-light)}
-.svc{
-  display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:center;
-  padding:clamp(32px,3.8vw,56px) 0;
-  border-bottom:1px solid var(--border-light);
-  position:relative;cursor:pointer;
-  transition:background .5s var(--easing);
-}
-.svc::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:0;
-  background:linear-gradient(90deg,rgba(184,146,74,.08),transparent 50%);
-  transition:width .6s var(--easing);pointer-events:none;
-}
-.svc:hover::before{width:100%}
-.svc:hover .svc-arr{color:var(--gold);transform:translate(8px,-8px) rotate(-4deg);opacity:1}
-.svc:hover .title em{filter:brightness(1.15)}
-.svc .num{
-  grid-column:1 / span 2;padding-left:clamp(20px,3vw,40px);
-  font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);
-  align-self:start;padding-top:4px;
-}
-.svc .title{
-  grid-column:3 / span 5;
-  font-size:clamp(34px,4.4vw,64px);letter-spacing:-.02em;
-}
-.svc .title em{
-  font-style:italic;color:var(--gold);font-weight:500;
-  background:linear-gradient(180deg,var(--gold-2),var(--gold));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  transition:filter .4s var(--easing);
-}
-.svc .desc{
-  grid-column:8 / span 3;
-  font-size:15px;line-height:1.65;color:rgba(237,234,228,.7);
-  max-width:40ch;
-}
-.svc .svc-arr{
-  grid-column:11 / span 2;justify-self:end;padding-right:clamp(20px,3vw,40px);
-  font-size:42px;color:var(--pearl);opacity:.5;font-family:'Playfair Display',serif;
-  transition:transform .5s var(--easing),color .4s var(--easing),opacity .4s var(--easing);
-}
-.svc-tags{grid-column:3 / span 9;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.svc-tags span{
-  font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:400;
-  padding:6px 12px;border:1px solid var(--border-light);border-radius:999px;
-  color:rgba(237,234,228,.7);
-  transition:border-color .3s var(--easing),color .3s var(--easing);
-}
-.svc:hover .svc-tags span{border-color:var(--border-gold);color:var(--gold-2)}
-@media(max-width:900px){
-  .svc{padding:32px clamp(20px,3vw,32px)}
-  .svc .num,.svc .title,.svc .desc,.svc .svc-arr,.svc-tags{grid-column:1 / -1;padding:0}
-  .svc .svc-arr{justify-self:start;margin-top:10px}
-  .svc .desc{margin-top:12px}
-}
-
-/* ═════════════ approach ═════════════ */
-.approach{border-top:1px solid var(--border-light)}
-.phases{
-  display:grid;grid-template-columns:repeat(4,1fr);
+.svc-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
   gap:1px;background:var(--border-light);
   border:1px solid var(--border-light);
 }
-.phase{
-  background:var(--obsidian);padding:clamp(28px,3vw,40px);
-  display:flex;flex-direction:column;gap:22px;min-height:360px;
+.svc-card{
+  background:var(--obsidian);
+  display:flex;flex-direction:column;
+  position:relative;overflow:hidden;
   transition:background .45s var(--easing);
+  cursor:default;
+}
+.svc-card:hover{background:var(--obsidian-2)}
+.svc-card:hover .svc-card-arr{transform:translate(5px,-5px);opacity:1;color:var(--gold)}
+.svc-card:hover .svc-mockup{opacity:1}
+.svc-card:hover .svc-card-tags span{border-color:var(--border-gold);color:var(--gold-2)}
+
+/* mockup area */
+.svc-mockup{
+  width:100%;aspect-ratio:16/7;overflow:hidden;
+  border-bottom:1px solid var(--border-light);
+  opacity:.85;transition:opacity .45s var(--easing);
   position:relative;
 }
-.phase:hover{background:var(--obsidian-2)}
-.phase:hover .phase-n{color:var(--gold)}
-.phase .phase-n{
-  font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);
-  display:flex;align-items:center;gap:12px;
-  transition:color .3s var(--easing);
+.svc-mockup svg{width:100%;height:100%;display:block}
+
+/* card body */
+.svc-card-body{padding:clamp(24px,2.8vw,40px);display:flex;flex-direction:column;gap:16px;flex:1}
+.svc-card-num{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);
+  display:flex;align-items:center;gap:10px;
 }
-.phase .phase-n::before{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
-.phase h3{
-  font-size:clamp(28px,2.6vw,38px);margin-top:auto;letter-spacing:-.018em;
+.svc-card-num::before{content:"";width:22px;height:1px;background:currentColor;opacity:.55}
+.svc-card-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,3vw,44px);font-weight:400;letter-spacing:-.018em;line-height:1.05;
 }
-.phase h3 em{
-  font-style:italic;color:var(--gold);
+.svc-card-title em{
+  font-style:italic;
   background:linear-gradient(180deg,var(--gold-2),var(--gold));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.phase p{font-size:14px;line-height:1.7;color:rgba(237,234,228,.72)}
-.phase .phase-meta{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-top:4px}
-@media(max-width:900px){
-  .phases{grid-template-columns:1fr}
-  .phase{min-height:auto}
+.svc-card-desc{font-size:14px;line-height:1.72;color:rgba(237,234,228,.68);max-width:50ch}
+.svc-card-footer{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-top:auto;padding-top:20px;border-top:1px solid var(--border-light);
+}
+.svc-card-tags{display:flex;flex-wrap:wrap;gap:6px}
+.svc-card-tags span{
+  font-size:10px;letter-spacing:.15em;text-transform:uppercase;
+  padding:5px 10px;border:1px solid var(--border-light);border-radius:999px;
+  color:rgba(237,234,228,.65);
+  transition:border-color .3s var(--easing),color .3s var(--easing);
+}
+.svc-card-arr{
+  font-size:28px;font-family:'Playfair Display',serif;
+  color:var(--pearl);opacity:.4;flex-shrink:0;margin-left:16px;
+  transition:transform .45s var(--easing),opacity .3s var(--easing),color .3s var(--easing);
+}
+@media(max-width:760px){
+  .svc-grid{grid-template-columns:1fr}
+  .svc-mockup{aspect-ratio:16/6}
+}
+
+/* ═════════════ approach — vertical alternating timeline ═════════════ */
+.approach{border-top:1px solid var(--border-light)}
+.timeline{
+  position:relative;
+  display:flex;flex-direction:column;gap:0;
+}
+/* central vertical line */
+.timeline::before{
+  content:"";position:absolute;left:50%;top:0;bottom:0;
+  width:1px;background:var(--border-light);
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+.tl-item{
+  display:grid;grid-template-columns:1fr auto 1fr;
+  align-items:center;gap:0;
+  padding:clamp(48px,6vw,80px) 0;
+  position:relative;
+}
+/* dot on the line */
+.tl-dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--obsidian);
+  border:1px solid var(--gold);
+  box-shadow:0 0 0 4px rgba(184,146,74,.12), 0 0 16px rgba(184,146,74,.2);
+  z-index:2;position:relative;flex-shrink:0;
+  transition:box-shadow .4s var(--easing),background .4s var(--easing);
+}
+.tl-item:hover .tl-dot{
+  background:var(--gold);
+  box-shadow:0 0 0 6px rgba(184,146,74,.18), 0 0 24px rgba(184,146,74,.35);
+}
+/* last dot pulses — phase is ongoing */
+.tl-item:last-child .tl-dot{
+  animation:dot-pulse 2.8s var(--easing) infinite;
+}
+@keyframes dot-pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,158,116,.55),0 0 0 4px rgba(184,146,74,.12)}
+  70%{box-shadow:0 0 0 14px rgba(0,158,116,0),0 0 0 4px rgba(184,146,74,.12)}
+  100%{box-shadow:0 0 0 0 rgba(0,158,116,0),0 0 0 4px rgba(184,146,74,.12)}
+}
+.tl-item:last-child .tl-dot{border-color:var(--emerald)}
+
+/* content panels — alternate left/right */
+.tl-left{padding-right:clamp(32px,5vw,72px);text-align:right}
+.tl-right{padding-left:clamp(32px,5vw,72px);text-align:left}
+
+/* even items: content is on the RIGHT, left cell is empty */
+.tl-item:nth-child(even) .tl-left{order:1}
+.tl-item:nth-child(even) .tl-dot-wrap{order:2}
+.tl-item:nth-child(even) .tl-right{order:3}
+
+/* odd items: content is on the LEFT, right cell is empty */
+.tl-item:nth-child(odd) .tl-content{grid-column:1;text-align:right;padding-right:clamp(32px,5vw,72px)}
+
+/* shared content styles */
+.tl-content{display:flex;flex-direction:column;gap:14px}
+.tl-n{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2);
+  display:flex;align-items:center;gap:10px;
+}
+.tl-left .tl-n{justify-content:flex-end}
+.tl-right .tl-n{justify-content:flex-start}
+.tl-n-bg{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(80px,10vw,140px);font-weight:400;
+  color:rgba(237,234,228,.04);line-height:1;letter-spacing:-.03em;
+  position:absolute;pointer-events:none;
+  top:50%;transform:translateY(-50%);
+}
+.tl-item:nth-child(odd) .tl-n-bg{right:calc(50% + 40px)}
+.tl-item:nth-child(even) .tl-n-bg{left:calc(50% + 40px)}
+
+.tl-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,3.5vw,52px);font-weight:400;letter-spacing:-.02em;line-height:1.06;
+}
+.tl-title em{
+  font-style:italic;
+  background:linear-gradient(180deg,var(--gold-2),var(--gold));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.tl-desc{font-size:15px;line-height:1.72;color:rgba(237,234,228,.68);max-width:44ch}
+.tl-left .tl-desc{margin-left:auto}
+.tl-meta{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--stone);padding:6px 12px;border:1px solid var(--border-light);
+  border-radius:999px;display:inline-flex;align-self:flex-start;
+}
+.tl-left .tl-meta{align-self:flex-end}
+
+/* divider between items */
+.tl-item + .tl-item::before{
+  content:"";position:absolute;top:0;left:calc(50% - 30px);width:60px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--border-light),transparent);
+}
+
+@media(max-width:760px){
+  .timeline::before{left:22px}
+  .tl-item{grid-template-columns:44px 1fr;grid-template-rows:auto}
+  .tl-dot-wrap{grid-column:1;grid-row:1;display:flex;align-items:flex-start;padding-top:4px}
+  .tl-left,.tl-right{grid-column:2;grid-row:1;text-align:left;padding-left:20px;padding-right:0}
+  .tl-left .tl-n,.tl-right .tl-n{justify-content:flex-start}
+  .tl-left .tl-desc,.tl-right .tl-desc{margin-left:0;text-align:left}
+  .tl-left .tl-meta,.tl-right .tl-meta{align-self:flex-start}
+  .tl-item:nth-child(odd) .tl-content,
+  .tl-item:nth-child(even) .tl-content{text-align:left;grid-column:unset;padding-right:0}
+  .tl-item:nth-child(odd) .tl-content .tl-n,
+  .tl-item:nth-child(even) .tl-content .tl-n{justify-content:flex-start}
+  .tl-item:nth-child(even) .tl-left,
+  .tl-item:nth-child(even) .tl-right{order:unset}
+  .tl-n-bg,.tl-item:nth-child(odd) .tl-n-bg,.tl-item:nth-child(even) .tl-n-bg{display:none}
 }
 
 /* ═════════════ contact ═════════════ */
@@ -512,10 +598,10 @@ footer{
       Trasforma l'AI <br/>nel tuo <em>vantaggio</em> <span class="ornament">✦</span> <em>competitivo.</em>
     </h1>
     <p class="sub reveal reveal-d2">
-      Aiuto <b>personal brand, imprenditori e team</b> a far lavorare l'AI al posto loro,
+      Aiuto <b>personal brand, fondatori e imprenditori</b> a far lavorare l'AI al posto loro,
       non al posto del pensiero. Strumenti su misura che ti restituiscono
       <b>10 ore alla settimana</b> — dalla prima chiacchierata alla consegna,
-      <b>io e il mio team</b>, nessun tramite in mezzo.
+      <b>io</b>, nessun tramite in mezzo.
     </p>
     <div class="ctas reveal reveal-d3">
       <a class="btn" href="#contact">Prenota una consulenza <span class="arr">↗</span></a>
@@ -524,7 +610,7 @@ footer{
     <div class="meta-row reveal reveal-d4">
       <div><span class="tag">Dove</span><b>Rimini · Pesaro · Remoto</b></div>
       <div><span class="tag">Dal</span><b>2018</b></div>
-      <div><span class="tag">Per chi</span><b>Personal brand · imprese · team</b></div>
+      <div><span class="tag">Per chi</span><b>Personal brand · fondatori · imprese</b></div>
       <div><span class="tag">Ti rispondo</span><b>Entro 24 ore</b></div>
     </div>
   </div>
@@ -548,46 +634,213 @@ footer{
       <span class="kicker">— 04 servizi</span>
     </div>
   </div>
-  <div class="svc-list">
-    <article class="svc">
-      <div class="num">01 — Agenti</div>
-      <h3 class="title"><em>Agenti</em> AI</h3>
-      <p class="desc">Sistemi autonomi su misura per il lavoro ripetitivo: lead generation, enrichment, ricerca, customer support. Operano sui tuoi dati, sui tuoi tool, sulle tue SOP.</p>
-      <div class="svc-arr">↗</div>
-      <div class="svc-tags">
-        <span>LangGraph</span><span>Claude · GPT</span><span>Integrazione CRM</span><span>Tool use</span><span>24/7</span>
+  <div class="svc-grid">
+
+    <!-- 01 Agenti -->
+    <article class="svc-card reveal">
+      <div class="svc-mockup">
+        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="640" height="200" fill="#0E0E10"/>
+          <!-- terminal window chrome -->
+          <rect x="16" y="16" width="608" height="168" rx="6" fill="#14141A" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <circle cx="36" cy="32" r="5" fill="#3A3530"/><circle cx="52" cy="32" r="5" fill="#3A3530"/><circle cx="68" cy="32" r="5" fill="#3A3530"/>
+          <rect x="16" y="44" width="608" height="1" fill="rgba(255,255,255,0.06)"/>
+          <!-- terminal lines -->
+          <text x="32" y="72" font-family="monospace" font-size="11" fill="#009E74">▶ agent.run(</text>
+          <text x="32" y="72" font-family="monospace" font-size="11" fill="rgba(237,234,228,0.5)" dx="92">"lead_enrichment"</text>
+          <text x="32" y="72" font-family="monospace" font-size="11" fill="#009E74" dx="228">)</text>
+          <text x="32" y="92" font-family="monospace" font-size="11" fill="rgba(237,234,228,0.3)">  tools: [search, crm_write, email_draft]</text>
+          <text x="32" y="112" font-family="monospace" font-size="11" fill="rgba(184,146,74,0.8)">  ✓ 142 leads processed</text>
+          <text x="32" y="132" font-family="monospace" font-size="11" fill="rgba(184,146,74,0.8)">  ✓ CRM updated</text>
+          <text x="32" y="152" font-family="monospace" font-size="11" fill="rgba(184,146,74,0.8)">  ✓ 38 drafts queued</text>
+          <!-- blinking cursor -->
+          <rect x="32" y="162" width="7" height="11" fill="#009E74" opacity="0.7">
+            <animate attributeName="opacity" values="0.7;0;0.7" dur="1.2s" repeatCount="indefinite"/>
+          </rect>
+          <!-- right: node graph -->
+          <circle cx="530" cy="90" r="22" fill="none" stroke="rgba(184,146,74,0.25)" stroke-width="1"/>
+          <circle cx="530" cy="90" r="6" fill="#B8924A" opacity="0.7"/>
+          <circle cx="580" cy="60" r="12" fill="none" stroke="rgba(0,158,116,0.3)" stroke-width="1"/>
+          <circle cx="580" cy="60" r="3" fill="#009E74" opacity="0.6"/>
+          <circle cx="580" cy="120" r="12" fill="none" stroke="rgba(0,158,116,0.3)" stroke-width="1"/>
+          <circle cx="580" cy="120" r="3" fill="#009E74" opacity="0.6"/>
+          <circle cx="610" cy="90" r="10" fill="none" stroke="rgba(0,158,116,0.2)" stroke-width="1"/>
+          <circle cx="610" cy="90" r="3" fill="#009E74" opacity="0.4"/>
+          <line x1="552" y1="80" x2="568" y2="66" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
+          <line x1="552" y1="100" x2="568" y2="114" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
+          <line x1="592" y1="64" x2="600" y2="82" stroke="rgba(0,158,116,0.15)" stroke-width="1"/>
+          <line x1="592" y1="116" x2="600" y2="98" stroke="rgba(0,158,116,0.15)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="svc-card-body">
+        <div class="svc-card-num">01 — Agenti</div>
+        <h3 class="svc-card-title"><em>Agenti</em> AI</h3>
+        <p class="svc-card-desc">Sistemi autonomi su misura per il lavoro ripetitivo: lead generation, enrichment, ricerca, customer support. Operano sui tuoi dati, sui tuoi tool, sulle tue SOP.</p>
+        <div class="svc-card-footer">
+          <div class="svc-card-tags">
+            <span>LangGraph</span><span>Claude · GPT</span><span>CRM</span><span>24/7</span>
+          </div>
+          <div class="svc-card-arr">↗</div>
+        </div>
       </div>
     </article>
 
-    <article class="svc">
-      <div class="num">02 — Twin Digitale</div>
-      <h3 class="title">Il tuo <em>Twin</em> Digitale</h3>
-      <p class="desc">Creo la tua versione digitale — avatar video, voce clonata, contenuti "girati" da te senza stare sotto le luci. Il tuo personal brand scala, mentre tu fai altro.</p>
-      <div class="svc-arr">↗</div>
-      <div class="svc-tags">
-        <span>HeyGen</span><span>Higgsfield</span><span>Avatar video</span><span>Voice clone</span><span>Content pipeline</span>
+    <!-- 02 Twin Digitale -->
+    <article class="svc-card reveal reveal-d1">
+      <div class="svc-mockup">
+        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="640" height="200" fill="#0E0E10"/>
+          <!-- video player chrome -->
+          <rect x="16" y="16" width="608" height="168" rx="6" fill="#14141A" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <!-- waveform bars -->
+          <g opacity="0.55">
+            <rect x="40" y="120" width="4" height="30" rx="2" fill="#B8924A"/>
+            <rect x="50" y="100" width="4" height="50" rx="2" fill="#B8924A"/>
+            <rect x="60" y="110" width="4" height="40" rx="2" fill="#B8924A"/>
+            <rect x="70" y="90" width="4" height="60" rx="2" fill="#B8924A"/>
+            <rect x="80" y="105" width="4" height="45" rx="2" fill="#B8924A"/>
+            <rect x="90" y="115" width="4" height="35" rx="2" fill="#B8924A"/>
+            <rect x="100" y="95" width="4" height="55" rx="2" fill="#B8924A"/>
+            <rect x="110" y="108" width="4" height="42" rx="2" fill="#B8924A"/>
+            <rect x="120" y="118" width="4" height="32" rx="2" fill="#B8924A"/>
+            <rect x="130" y="88" width="4" height="62" rx="2" fill="#B8924A"/>
+            <rect x="140" y="100" width="4" height="50" rx="2" fill="#B8924A"/>
+            <rect x="150" y="120" width="4" height="30" rx="2" fill="#B8924A"/>
+          </g>
+          <!-- avatar silhouette -->
+          <ellipse cx="380" cy="75" rx="34" ry="38" fill="rgba(184,146,74,0.08)" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
+          <circle cx="380" cy="65" r="18" fill="rgba(184,146,74,0.12)" stroke="rgba(184,146,74,0.3)" stroke-width="1"/>
+          <path d="M350 140 Q380 115 410 140" fill="rgba(184,146,74,0.08)" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
+          <!-- mirror / reflection -->
+          <ellipse cx="500" cy="75" rx="34" ry="38" fill="rgba(0,158,116,0.06)" stroke="rgba(0,158,116,0.15)" stroke-width="1" stroke-dasharray="4 3"/>
+          <circle cx="500" cy="65" r="18" fill="rgba(0,158,116,0.08)" stroke="rgba(0,158,116,0.2)" stroke-width="1" stroke-dasharray="3 3"/>
+          <path d="M470 140 Q500 115 530 140" fill="rgba(0,158,116,0.06)" stroke="rgba(0,158,116,0.15)" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- connecting arrow -->
+          <line x1="416" y1="90" x2="462" y2="90" stroke="rgba(184,146,74,0.3)" stroke-width="1" stroke-dasharray="5 3"/>
+          <polygon points="462,86 470,90 462,94" fill="rgba(184,146,74,0.4)"/>
+          <!-- labels -->
+          <text x="380" y="175" font-family="Inter,sans-serif" font-size="9" fill="rgba(237,234,228,0.35)" text-anchor="middle" letter-spacing="2">YOU</text>
+          <text x="500" y="175" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.5)" text-anchor="middle" letter-spacing="2">TWIN</text>
+        </svg>
+      </div>
+      <div class="svc-card-body">
+        <div class="svc-card-num">02 — Twin Digitale</div>
+        <h3 class="svc-card-title">Il tuo <em>Twin</em> Digitale</h3>
+        <p class="svc-card-desc">Creo la tua versione digitale — avatar video, voce clonata, contenuti "girati" da te senza stare sotto le luci. Il tuo brand scala, mentre tu fai altro.</p>
+        <div class="svc-card-footer">
+          <div class="svc-card-tags">
+            <span>HeyGen</span><span>Avatar video</span><span>Voice clone</span><span>Pipeline</span>
+          </div>
+          <div class="svc-card-arr">↗</div>
+        </div>
       </div>
     </article>
 
-    <article class="svc">
-      <div class="num">03 — RAG</div>
-      <h3 class="title">Sistemi <em>RAG</em></h3>
-      <p class="desc">La tua conoscenza, interrogabile. Embedding privati, citazioni, controllo accessi — così l'AI risponde con <i>i tuoi</i> documenti, non con le ipotesi di un modello generico.</p>
-      <div class="svc-arr">↗</div>
-      <div class="svc-tags">
-        <span>Pinecone</span><span>Hybrid search</span><span>Citazioni</span><span>Access control</span><span>On-prem ready</span>
+    <!-- 03 RAG -->
+    <article class="svc-card reveal reveal-d2">
+      <div class="svc-mockup">
+        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="640" height="200" fill="#0E0E10"/>
+          <rect x="16" y="16" width="608" height="168" rx="6" fill="#14141A" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <!-- search bar -->
+          <rect x="32" y="28" width="320" height="28" rx="4" fill="#0E0E10" stroke="rgba(0,158,116,0.3)" stroke-width="1"/>
+          <text x="48" y="47" font-family="monospace" font-size="11" fill="rgba(237,234,228,0.4)">Come gestisci i clienti VIP?</text>
+          <rect x="360" y="28" width="60" height="28" rx="4" fill="rgba(0,158,116,0.15)" stroke="rgba(0,158,116,0.3)" stroke-width="1"/>
+          <text x="390" y="47" font-family="Inter,sans-serif" font-size="10" fill="#009E74" text-anchor="middle" letter-spacing="1">cerca</text>
+          <!-- result cards -->
+          <rect x="32" y="68" width="280" height="44" rx="4" fill="rgba(184,146,74,0.06)" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
+          <text x="44" y="86" font-family="Inter,sans-serif" font-size="10" fill="rgba(184,146,74,0.8)" letter-spacing="1">SOP_clienti_vip.pdf · pag. 3</text>
+          <text x="44" y="102" font-family="monospace" font-size="10" fill="rgba(237,234,228,0.45)">"…protocollo accoglienza entro 2h…"</text>
+          <rect x="32" y="120" width="280" height="36" rx="4" fill="rgba(184,146,74,0.04)" stroke="rgba(184,146,74,0.12)" stroke-width="1"/>
+          <text x="44" y="138" font-family="Inter,sans-serif" font-size="10" fill="rgba(184,146,74,0.5)" letter-spacing="1">contratto_enterprise_2025.docx · pag. 7</text>
+          <text x="44" y="152" font-family="monospace" font-size="10" fill="rgba(237,234,228,0.3)">"…SLA garantito 99.9% uptime…"</text>
+          <!-- similarity score bars -->
+          <text x="340" y="86" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.7)" letter-spacing="1">0.94</text>
+          <rect x="340" y="92" width="60" height="3" rx="1" fill="rgba(0,158,116,0.15)"/>
+          <rect x="340" y="92" width="56" height="3" rx="1" fill="rgba(0,158,116,0.6)"/>
+          <text x="340" y="138" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.45)" letter-spacing="1">0.81</text>
+          <rect x="340" y="144" width="60" height="3" rx="1" fill="rgba(0,158,116,0.1)"/>
+          <rect x="340" y="144" width="49" height="3" rx="1" fill="rgba(0,158,116,0.4)"/>
+          <!-- db cylinders right -->
+          <ellipse cx="550" cy="68" rx="44" ry="10" fill="none" stroke="rgba(0,158,116,0.2)" stroke-width="1"/>
+          <rect x="506" y="68" width="88" height="30" fill="none" stroke="rgba(0,158,116,0.15)" stroke-width="1"/>
+          <ellipse cx="550" cy="98" rx="44" ry="10" fill="none" stroke="rgba(0,158,116,0.2)" stroke-width="1"/>
+          <rect x="506" y="98" width="88" height="22" fill="none" stroke="rgba(0,158,116,0.12)" stroke-width="1"/>
+          <ellipse cx="550" cy="120" rx="44" ry="10" fill="none" stroke="rgba(0,158,116,0.15)" stroke-width="1"/>
+          <text x="550" y="85" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.5)" text-anchor="middle" letter-spacing="1">embeddings</text>
+          <text x="550" y="112" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.35)" text-anchor="middle" letter-spacing="1">vectors</text>
+        </svg>
+      </div>
+      <div class="svc-card-body">
+        <div class="svc-card-num">03 — RAG</div>
+        <h3 class="svc-card-title">Sistemi <em>RAG</em></h3>
+        <p class="svc-card-desc">La tua conoscenza, interrogabile. Embedding privati, citazioni, controllo accessi — l'AI risponde con <em style="-webkit-text-fill-color:inherit;color:var(--pearl)">i tuoi</em> documenti, non con le ipotesi di un modello generico.</p>
+        <div class="svc-card-footer">
+          <div class="svc-card-tags">
+            <span>Pinecone</span><span>Hybrid search</span><span>Citazioni</span><span>On-prem</span>
+          </div>
+          <div class="svc-card-arr">↗</div>
+        </div>
       </div>
     </article>
 
-    <article class="svc">
-      <div class="num">04 — Strategia</div>
-      <h3 class="title"><em>Strategia</em> AI</h3>
-      <p class="desc">Roadmap, audit dello stack, mappatura delle opportunità e piano implementativo a 12 settimane. Workshop e training per il team inclusi. Chiarezza prima del codice.</p>
-      <div class="svc-arr">↗</div>
-      <div class="svc-tags">
-        <span>Audit</span><span>Modello ROI</span><span>Piano 12 sett.</span><span>Workshop</span><span>Hands-on</span>
+    <!-- 04 Strategia -->
+    <article class="svc-card reveal reveal-d3">
+      <div class="svc-mockup">
+        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <rect width="640" height="200" fill="#0E0E10"/>
+          <rect x="16" y="16" width="608" height="168" rx="6" fill="#14141A" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <!-- roadmap timeline -->
+          <line x1="60" y1="100" x2="580" y2="100" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+          <!-- week markers -->
+          <g font-family="Inter,sans-serif" font-size="9" fill="rgba(237,234,228,0.25)" text-anchor="middle" letter-spacing="1">
+            <text x="100" y="170">W1</text><text x="180" y="170">W3</text>
+            <text x="280" y="170">W6</text><text x="400" y="170">W9</text><text x="520" y="170">W12</text>
+          </g>
+          <!-- milestone dots & bars -->
+          <circle cx="100" cy="100" r="6" fill="#B8924A" opacity="0.9"/>
+          <rect x="100" y="62" width="80" height="3" rx="1" fill="rgba(184,146,74,0.5)"/>
+          <text x="140" y="58" font-family="Inter,sans-serif" font-size="9" fill="rgba(184,146,74,0.7)" text-anchor="middle" letter-spacing="1">AUDIT</text>
+
+          <circle cx="180" cy="100" r="6" fill="#B8924A" opacity="0.9"/>
+          <rect x="180" y="75" width="100" height="3" rx="1" fill="rgba(184,146,74,0.4)"/>
+          <text x="230" y="71" font-family="Inter,sans-serif" font-size="9" fill="rgba(184,146,74,0.6)" text-anchor="middle" letter-spacing="1">PIANO</text>
+
+          <circle cx="280" cy="100" r="6" fill="#009E74" opacity="0.9"/>
+          <rect x="280" y="52" width="120" height="3" rx="1" fill="rgba(0,158,116,0.5)"/>
+          <text x="340" y="48" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.7)" text-anchor="middle" letter-spacing="1">BUILD</text>
+
+          <circle cx="400" cy="100" r="6" fill="#009E74" opacity="0.9"/>
+          <rect x="400" y="68" width="120" height="3" rx="1" fill="rgba(0,158,116,0.4)"/>
+          <text x="460" y="64" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.6)" text-anchor="middle" letter-spacing="1">TRAINING</text>
+
+          <circle cx="520" cy="100" r="6" fill="#B8924A" opacity="0.7"/>
+          <circle cx="520" cy="100" r="12" fill="none" stroke="rgba(184,146,74,0.3)" stroke-width="1">
+            <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <text x="520" y="48" font-family="Inter,sans-serif" font-size="9" fill="rgba(184,146,74,0.5)" text-anchor="middle" letter-spacing="1">LAUNCH</text>
+
+          <!-- progress fill -->
+          <line x1="60" y1="100" x2="400" y2="100" stroke="rgba(0,158,116,0.25)" stroke-width="2"/>
+          <!-- ROI label -->
+          <rect x="440" y="118" width="90" height="22" rx="3" fill="rgba(184,146,74,0.08)" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
+          <text x="485" y="133" font-family="Inter,sans-serif" font-size="10" fill="rgba(184,146,74,0.7)" text-anchor="middle" letter-spacing="1">ROI model ✓</text>
+        </svg>
+      </div>
+      <div class="svc-card-body">
+        <div class="svc-card-num">04 — Strategia</div>
+        <h3 class="svc-card-title"><em>Strategia</em> AI</h3>
+        <p class="svc-card-desc">Roadmap, audit dello stack, mappatura delle opportunità e piano implementativo a 12 settimane. Workshop e training per il team inclusi. Chiarezza prima del codice.</p>
+        <div class="svc-card-footer">
+          <div class="svc-card-tags">
+            <span>Audit</span><span>ROI model</span><span>Piano 12 sett.</span><span>Workshop</span>
+          </div>
+          <div class="svc-card-arr">↗</div>
+        </div>
       </div>
     </article>
+
   </div>
 </section>
 
@@ -599,31 +852,76 @@ footer{
       <h2 class="reveal">Quattro passi. <br/><em>Zero fuffa.</em></h2>
       <span class="kicker">— Il mio modo</span>
     </div>
-    <div class="phases reveal">
-      <div class="phase">
-        <div class="phase-n">Fase 01</div>
-        <p>Due o tre chiacchierate e uno sguardo al tuo modo di lavorare. Capiamo insieme dove l'AI fa davvero la differenza — e, soprattutto, dove non serve.</p>
-        <div class="phase-meta">Durata · 1 settimana</div>
-        <h3><em>Ascolto</em></h3>
+    <div class="timeline">
+
+      <!-- Fase 01 — content LEFT -->
+      <div class="tl-item reveal">
+        <div class="tl-left">
+          <div class="tl-content">
+            <div class="tl-n">Fase 01</div>
+            <h3 class="tl-title"><em>Ascolto</em></h3>
+            <p class="tl-desc">Due o tre chiacchierate e uno sguardo al tuo modo di lavorare. Capiamo insieme dove l'AI fa davvero la differenza — e, soprattutto, dove non serve.</p>
+            <span class="tl-meta">1 settimana</span>
+          </div>
+        </div>
+        <div class="tl-dot-wrap" style="display:flex;justify-content:center;padding:0 clamp(16px,2.5vw,36px)">
+          <div class="tl-dot"></div>
+        </div>
+        <div class="tl-right"></div>
+        <div class="tl-n-bg">01</div>
       </div>
-      <div class="phase">
-        <div class="phase-n">Fase 02</div>
-        <p>Un piano chiaro, scritto in italiano: cosa costruiamo, in che ordine, con quali risultati attesi. Decidi tu, in anticipo, prima che parta il lavoro vero.</p>
-        <div class="phase-meta">Durata · 1–2 settimane</div>
-        <h3><em>Piano</em></h3>
+
+      <!-- Fase 02 — content RIGHT -->
+      <div class="tl-item reveal reveal-d1">
+        <div class="tl-left"></div>
+        <div class="tl-dot-wrap" style="display:flex;justify-content:center;padding:0 clamp(16px,2.5vw,36px)">
+          <div class="tl-dot"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-content">
+            <div class="tl-n">Fase 02</div>
+            <h3 class="tl-title"><em>Piano</em></h3>
+            <p class="tl-desc">Un piano chiaro, scritto in italiano: cosa costruisco, in che ordine, con quali risultati attesi. Decidi tu, in anticipo, prima che parta il lavoro vero.</p>
+            <span class="tl-meta">1–2 settimane</span>
+          </div>
+        </div>
+        <div class="tl-n-bg">02</div>
       </div>
-      <div class="phase">
-        <div class="phase-n">Fase 03</div>
-        <p>Ogni settimana ti mostro qualcosa di nuovo. Niente mesi di silenzio e una sorpresa alla fine — vedi come nascono le cose, pezzo per pezzo.</p>
-        <div class="phase-meta">Durata · 4–12 settimane</div>
-        <h3><em>Costruzione</em></h3>
+
+      <!-- Fase 03 — content LEFT -->
+      <div class="tl-item reveal reveal-d2">
+        <div class="tl-left">
+          <div class="tl-content">
+            <div class="tl-n">Fase 03</div>
+            <h3 class="tl-title"><em>Costruzione</em></h3>
+            <p class="tl-desc">Ogni settimana ti mostro qualcosa di nuovo. Niente mesi di silenzio e una sorpresa alla fine — vedi come nascono le cose, pezzo per pezzo.</p>
+            <span class="tl-meta">4–12 settimane</span>
+          </div>
+        </div>
+        <div class="tl-dot-wrap" style="display:flex;justify-content:center;padding:0 clamp(16px,2.5vw,36px)">
+          <div class="tl-dot"></div>
+        </div>
+        <div class="tl-right"></div>
+        <div class="tl-n-bg">03</div>
       </div>
-      <div class="phase">
-        <div class="phase-n">Fase 04</div>
-        <p>Continuo a tenere d'occhio le cose anche dopo la consegna. Il mondo cambia — me ne accorgo prima di te. E insegno al tuo team a usare tutto in autonomia.</p>
-        <div class="phase-meta">Durata · Continuativa</div>
-        <h3><em>Cura</em></h3>
+
+      <!-- Fase 04 — content RIGHT — dot pulses (ongoing) -->
+      <div class="tl-item reveal reveal-d3">
+        <div class="tl-left"></div>
+        <div class="tl-dot-wrap" style="display:flex;justify-content:center;padding:0 clamp(16px,2.5vw,36px)">
+          <div class="tl-dot"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-content">
+            <div class="tl-n">Fase 04</div>
+            <h3 class="tl-title"><em>Cura</em></h3>
+            <p class="tl-desc">Continuo a tenere d'occhio le cose anche dopo la consegna. Il mondo cambia — me ne accorgo prima di te. E insegno al tuo team a usare tutto in autonomia.</p>
+            <span class="tl-meta">Continuativa</span>
+          </div>
+        </div>
+        <div class="tl-n-bg">04</div>
       </div>
+
     </div>
   </div>
 </section>
@@ -633,7 +931,7 @@ footer{
   <div class="wrap">
     <div class="section-head">
       <span class="id">04 / Chi sono</span>
-      <h2 class="reveal">Un team <em>piccolo.</em><br/>Con gli strumenti <em>di molti.</em></h2>
+      <h2 class="reveal">Chi sono <em>io.</em></h2>
       <span class="kicker">— Ciao, sono Ilaria</span>
     </div>
     <div class="about-grid">
@@ -644,13 +942,13 @@ footer{
       </div>
       <div class="about-body reveal reveal-d1">
         <p class="lede">
-          Sono Ilaria. Insieme al mio team aiuto <em>personal brand, imprenditori e aziende</em>
+          Sono Ilaria. Aiuto <em>personal brand, fondatori e imprenditori</em>
           a far <em>funzionare davvero</em> l'AI nel lavoro di ogni giorno.
           Non domani. <em>Adesso.</em>
         </p>
         <p class="body">
-          Dal 2018 costruiamo strumenti che lavorano al posto delle persone, dentro le realtà
-          di chi ci sceglie. Niente presentazioni infinite, niente contratti lunghi che non
+          Dal 2018 costruisco strumenti che lavorano al posto delle persone, dentro le realtà
+          di chi mi sceglie. Niente presentazioni infinite, niente contratti lunghi che non
           servono, niente scatole nere. Solo cose che funzionano, aggiornamenti ogni settimana,
           risultati che si possono misurare.
         </p>
