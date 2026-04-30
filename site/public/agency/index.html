@@ -281,6 +281,7 @@ section{padding:clamp(90px,11vw,160px) 0;position:relative}
   position:relative;
 }
 .svc-mockup svg{width:100%;height:100%;display:block}
+.svc-mockup img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
 
 /* card body */
 .svc-card-body{padding:clamp(24px,2.8vw,40px);display:flex;flex-direction:column;gap:16px;flex:1}
@@ -639,38 +640,7 @@ footer{
     <!-- 01 Agenti -->
     <article class="svc-card reveal">
       <div class="svc-mockup">
-        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <rect width="640" height="200" fill="#0E0E10"/>
-          <!-- terminal window chrome -->
-          <rect x="16" y="16" width="608" height="168" rx="6" fill="#14141A" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-          <circle cx="36" cy="32" r="5" fill="#3A3530"/><circle cx="52" cy="32" r="5" fill="#3A3530"/><circle cx="68" cy="32" r="5" fill="#3A3530"/>
-          <rect x="16" y="44" width="608" height="1" fill="rgba(255,255,255,0.06)"/>
-          <!-- terminal lines -->
-          <text x="32" y="72" font-family="monospace" font-size="11" fill="#009E74">▶ agent.run(</text>
-          <text x="32" y="72" font-family="monospace" font-size="11" fill="rgba(237,234,228,0.5)" dx="92">"lead_enrichment"</text>
-          <text x="32" y="72" font-family="monospace" font-size="11" fill="#009E74" dx="228">)</text>
-          <text x="32" y="92" font-family="monospace" font-size="11" fill="rgba(237,234,228,0.3)">  tools: [search, crm_write, email_draft]</text>
-          <text x="32" y="112" font-family="monospace" font-size="11" fill="rgba(184,146,74,0.8)">  ✓ 142 leads processed</text>
-          <text x="32" y="132" font-family="monospace" font-size="11" fill="rgba(184,146,74,0.8)">  ✓ CRM updated</text>
-          <text x="32" y="152" font-family="monospace" font-size="11" fill="rgba(184,146,74,0.8)">  ✓ 38 drafts queued</text>
-          <!-- blinking cursor -->
-          <rect x="32" y="162" width="7" height="11" fill="#009E74" opacity="0.7">
-            <animate attributeName="opacity" values="0.7;0;0.7" dur="1.2s" repeatCount="indefinite"/>
-          </rect>
-          <!-- right: node graph -->
-          <circle cx="530" cy="90" r="22" fill="none" stroke="rgba(184,146,74,0.25)" stroke-width="1"/>
-          <circle cx="530" cy="90" r="6" fill="#B8924A" opacity="0.7"/>
-          <circle cx="580" cy="60" r="12" fill="none" stroke="rgba(0,158,116,0.3)" stroke-width="1"/>
-          <circle cx="580" cy="60" r="3" fill="#009E74" opacity="0.6"/>
-          <circle cx="580" cy="120" r="12" fill="none" stroke="rgba(0,158,116,0.3)" stroke-width="1"/>
-          <circle cx="580" cy="120" r="3" fill="#009E74" opacity="0.6"/>
-          <circle cx="610" cy="90" r="10" fill="none" stroke="rgba(0,158,116,0.2)" stroke-width="1"/>
-          <circle cx="610" cy="90" r="3" fill="#009E74" opacity="0.4"/>
-          <line x1="552" y1="80" x2="568" y2="66" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
-          <line x1="552" y1="100" x2="568" y2="114" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
-          <line x1="592" y1="64" x2="600" y2="82" stroke="rgba(0,158,116,0.15)" stroke-width="1"/>
-          <line x1="592" y1="116" x2="600" y2="98" stroke="rgba(0,158,116,0.15)" stroke-width="1"/>
-        </svg>
+        <img src="assets/graphics/02-agents-ai-1760x1080.png" alt="Diagramma Agenti AI — hub-spoke con 5 agenti satellite" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-card-num">01 — Agenti</div>
@@ -739,37 +709,7 @@ footer{
     <!-- 03 RAG -->
     <article class="svc-card reveal reveal-d2">
       <div class="svc-mockup">
-        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <rect width="640" height="200" fill="#0E0E10"/>
-          <rect x="16" y="16" width="608" height="168" rx="6" fill="#14141A" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-          <!-- search bar -->
-          <rect x="32" y="28" width="320" height="28" rx="4" fill="#0E0E10" stroke="rgba(0,158,116,0.3)" stroke-width="1"/>
-          <text x="48" y="47" font-family="monospace" font-size="11" fill="rgba(237,234,228,0.4)">Come gestisci i clienti VIP?</text>
-          <rect x="360" y="28" width="60" height="28" rx="4" fill="rgba(0,158,116,0.15)" stroke="rgba(0,158,116,0.3)" stroke-width="1"/>
-          <text x="390" y="47" font-family="Inter,sans-serif" font-size="10" fill="#009E74" text-anchor="middle" letter-spacing="1">cerca</text>
-          <!-- result cards -->
-          <rect x="32" y="68" width="280" height="44" rx="4" fill="rgba(184,146,74,0.06)" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
-          <text x="44" y="86" font-family="Inter,sans-serif" font-size="10" fill="rgba(184,146,74,0.8)" letter-spacing="1">SOP_clienti_vip.pdf · pag. 3</text>
-          <text x="44" y="102" font-family="monospace" font-size="10" fill="rgba(237,234,228,0.45)">"…protocollo accoglienza entro 2h…"</text>
-          <rect x="32" y="120" width="280" height="36" rx="4" fill="rgba(184,146,74,0.04)" stroke="rgba(184,146,74,0.12)" stroke-width="1"/>
-          <text x="44" y="138" font-family="Inter,sans-serif" font-size="10" fill="rgba(184,146,74,0.5)" letter-spacing="1">contratto_enterprise_2025.docx · pag. 7</text>
-          <text x="44" y="152" font-family="monospace" font-size="10" fill="rgba(237,234,228,0.3)">"…SLA garantito 99.9% uptime…"</text>
-          <!-- similarity score bars -->
-          <text x="340" y="86" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.7)" letter-spacing="1">0.94</text>
-          <rect x="340" y="92" width="60" height="3" rx="1" fill="rgba(0,158,116,0.15)"/>
-          <rect x="340" y="92" width="56" height="3" rx="1" fill="rgba(0,158,116,0.6)"/>
-          <text x="340" y="138" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.45)" letter-spacing="1">0.81</text>
-          <rect x="340" y="144" width="60" height="3" rx="1" fill="rgba(0,158,116,0.1)"/>
-          <rect x="340" y="144" width="49" height="3" rx="1" fill="rgba(0,158,116,0.4)"/>
-          <!-- db cylinders right -->
-          <ellipse cx="550" cy="68" rx="44" ry="10" fill="none" stroke="rgba(0,158,116,0.2)" stroke-width="1"/>
-          <rect x="506" y="68" width="88" height="30" fill="none" stroke="rgba(0,158,116,0.15)" stroke-width="1"/>
-          <ellipse cx="550" cy="98" rx="44" ry="10" fill="none" stroke="rgba(0,158,116,0.2)" stroke-width="1"/>
-          <rect x="506" y="98" width="88" height="22" fill="none" stroke="rgba(0,158,116,0.12)" stroke-width="1"/>
-          <ellipse cx="550" cy="120" rx="44" ry="10" fill="none" stroke="rgba(0,158,116,0.15)" stroke-width="1"/>
-          <text x="550" y="85" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.5)" text-anchor="middle" letter-spacing="1">embeddings</text>
-          <text x="550" y="112" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.35)" text-anchor="middle" letter-spacing="1">vectors</text>
-        </svg>
+        <img src="assets/graphics/03-rag-memoria-1760x1080.png" alt="Diagramma Memoria RAG — flusso 5 step con knowledge base" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-card-num">03 — RAG</div>
@@ -787,46 +727,7 @@ footer{
     <!-- 04 Strategia -->
     <article class="svc-card reveal reveal-d3">
       <div class="svc-mockup">
-        <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <rect width="640" height="200" fill="#0E0E10"/>
-          <rect x="16" y="16" width="608" height="168" rx="6" fill="#14141A" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-          <!-- roadmap timeline -->
-          <line x1="60" y1="100" x2="580" y2="100" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-          <!-- week markers -->
-          <g font-family="Inter,sans-serif" font-size="9" fill="rgba(237,234,228,0.25)" text-anchor="middle" letter-spacing="1">
-            <text x="100" y="170">W1</text><text x="180" y="170">W3</text>
-            <text x="280" y="170">W6</text><text x="400" y="170">W9</text><text x="520" y="170">W12</text>
-          </g>
-          <!-- milestone dots & bars -->
-          <circle cx="100" cy="100" r="6" fill="#B8924A" opacity="0.9"/>
-          <rect x="100" y="62" width="80" height="3" rx="1" fill="rgba(184,146,74,0.5)"/>
-          <text x="140" y="58" font-family="Inter,sans-serif" font-size="9" fill="rgba(184,146,74,0.7)" text-anchor="middle" letter-spacing="1">AUDIT</text>
-
-          <circle cx="180" cy="100" r="6" fill="#B8924A" opacity="0.9"/>
-          <rect x="180" y="75" width="100" height="3" rx="1" fill="rgba(184,146,74,0.4)"/>
-          <text x="230" y="71" font-family="Inter,sans-serif" font-size="9" fill="rgba(184,146,74,0.6)" text-anchor="middle" letter-spacing="1">PIANO</text>
-
-          <circle cx="280" cy="100" r="6" fill="#009E74" opacity="0.9"/>
-          <rect x="280" y="52" width="120" height="3" rx="1" fill="rgba(0,158,116,0.5)"/>
-          <text x="340" y="48" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.7)" text-anchor="middle" letter-spacing="1">BUILD</text>
-
-          <circle cx="400" cy="100" r="6" fill="#009E74" opacity="0.9"/>
-          <rect x="400" y="68" width="120" height="3" rx="1" fill="rgba(0,158,116,0.4)"/>
-          <text x="460" y="64" font-family="Inter,sans-serif" font-size="9" fill="rgba(0,158,116,0.6)" text-anchor="middle" letter-spacing="1">TRAINING</text>
-
-          <circle cx="520" cy="100" r="6" fill="#B8924A" opacity="0.7"/>
-          <circle cx="520" cy="100" r="12" fill="none" stroke="rgba(184,146,74,0.3)" stroke-width="1">
-            <animate attributeName="r" values="12;18;12" dur="2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <text x="520" y="48" font-family="Inter,sans-serif" font-size="9" fill="rgba(184,146,74,0.5)" text-anchor="middle" letter-spacing="1">LAUNCH</text>
-
-          <!-- progress fill -->
-          <line x1="60" y1="100" x2="400" y2="100" stroke="rgba(0,158,116,0.25)" stroke-width="2"/>
-          <!-- ROI label -->
-          <rect x="440" y="118" width="90" height="22" rx="3" fill="rgba(184,146,74,0.08)" stroke="rgba(184,146,74,0.2)" stroke-width="1"/>
-          <text x="485" y="133" font-family="Inter,sans-serif" font-size="10" fill="rgba(184,146,74,0.7)" text-anchor="middle" letter-spacing="1">ROI model ✓</text>
-        </svg>
+        <img src="assets/graphics/01-strategy-plan-1760x1080.png" alt="Piano di Strategia AI — griglia 6 fasi con abilitatori" loading="lazy"/>
       </div>
       <div class="svc-card-body">
         <div class="svc-card-num">04 — Strategia</div>
